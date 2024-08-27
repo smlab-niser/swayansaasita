@@ -1,0 +1,557 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swayansaasita</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <style>
+    section{
+      padding: 60px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
+    <div class="container-xxl">
+      <!-- navbar brand / title -->
+      <a class="navbar-brand" href="#intro">
+        <span class="text-secondary fw-bold">
+          <i class="bi bi-robot"></i>
+          Swayansaasita
+        </span>
+      </a>
+      <!-- toggle button for mobile nav -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- navbar links -->
+      <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#objectives">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#blogs">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact Us</a>
+          </li>
+          <li class="nav-item d-md-none">
+            <a class="nav-link" href="#dataset">Downlaod Dataset</a>
+          </li>
+          <li class="nav-item ms-2 d-none d-md-inline">
+            <a class="btn btn-secondary" href="#datasetdownload">Dataset</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- main image & intro text -->
+  <section id="intro">
+    <div class="container-lg">
+      <div class="row g-4 justify-content-center align-items-center">
+        <div class="col-md-5 text-center text-md-start">
+          <h1>
+            <div class="display-2">Autonomous</div>
+            <div class="display-5 text-muted">Two-Wheeler Driving</div>
+          </h1>
+          <p class="lead my-4 text-muted">Swayansaasita is a research and development initiative in Autonomous Vehicles (AV) with focus on challanges in developing countries like India. The project also focuses on design and development of ADAS systems for 2-wheeler vehicles. </p>
+          <a href="#datasetdownload" class="btn btn-secondary btn-lg">Download Dataset</a>
+          <!-- open sidebar / offcanvas -->
+          <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+            Cite this project. 
+          </a>
+        </div>
+        <div class="col-md-5 text-center d-none d-md-block">
+
+            <img src="/assets/dataview.gif" class="img-fluid" alt="ebook">
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- pricing plans -->
+  <section id="objectives" class="bg-light mt-5">
+    <div class="container-lg">
+      <div class="text-center">
+        <h2>Objectives</h2>
+        <p class="lead text-muted"> The availability of high data is the key element for research and development of intelligent systems for autonomous driving. Such data also helps in designs and development of simulations and models for studying driving dynamics - from the drivers PoV and also helps in understanding the dynamics of other elements on the road during driving such as pedestrians and other vehicles.</p>
+        <p class="lead text-muted">Through this project, we are releasing the biggest available multi-modal dataset for research and development in  autonomous driving and traffic behavior studies. The following key objectives are the focus of Swayansaasita. </p>
+      </div>
+
+      <div class="row my-5 g-2 align-items-center justify-content-center">
+        <div class="col-8 col-md-6 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">Dataset</h4>
+              <p class="lead card-subtitle">Largest Multimodal Dataset</p>
+              <img src="./assets/dataset.png" alt="" class="btn img-fluid ">
+              <p class="card-text mx-5 text-muted d-none d-lg-block">Largest multimodal dataset from real world including 360 degree point clouds, multiple IMU sensors, GPS. </p>
+            
+            </div>
+          </div>
+        </div>
+        <div class="col-8 col-md-6 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">ML Ready</h4>
+              <p class="lead card-subtitle">Annotated 3D data for ML.</p>
+              <img src="./assets/ml.png" alt="" class="btn img-fluid">
+              <p class="card-text mx-5 text-muted d-none d-lg-block">Annotated data including annotated 3D pointclouds, IMU Events and Images for ML applications.</p>
+            
+            </div>
+          </div>
+        </div>
+        <div class="col-8 col-md-6 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">Simulations</h4>
+              <p class="lead card-subtitle">Our software. </p>
+              <img src="./assets/simulation.png" alt="" class="btn img-fluid">
+              <p class="card-text mx-5 text-muted d-none d-lg-block">We develop simulation environment cum UI to interact with the dataset and run experiments.</p>
+            
+            </div>
+          </div>
+        </div><div class="col-8 col-md-6 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">ADAS Algorithms</h4>
+              <p class="lead card-subtitle">We train predictive ML models.</p>
+              <img src="./assets/adas.png" alt="" class="btn img-fluid">
+              <p class="card-text mx-5 text-muted d-none d-lg-block">We experiment with ML algorithms to devleop Advanced Drivers Assistens Systems.</p>
+            
+            </div>
+          </div>
+        </div>
+       
+        
+      </div>
+
+    </div><!-- end container -->
+  </section>
+
+  <!-- topics at a glance -->
+  <section id="blogs">
+    <div class="container-md">
+      <div class="text-center">
+        <h2>Technical Blogs</h2>
+        <p class="lead text-muted">Technical writeups on the technologies involved in this project. </p>
+      </div>
+      <div class="row my-5 g-5 justify-content-around align-items-center">
+        <div class="col-12 col-lg-6">
+          <img src="/assets/campos.jpg" class="img-fluid" alt="ebook">
+        </div>
+        <div class="col-lg-6">
+          
+          <!-- accordion -->
+          <div class="accordion" id="blogs">
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="head-tof">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tof" aria-expanded="false" aria-controls="tof">
+                  Time of Flight Imaging
+                </button>
+              </h2>
+              <div id="tof" class="accordion-collapse collapse hide" aria-labelledby="head-tof" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p>
+                  <a href="/blogs/tof.html" class="btn btn-outline-dark rounded-pill p-2"> Read blog</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="head-stereo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#stereo" aria-expanded="false" aria-controls="stereo">
+                  Stereovision Cameras
+                </button>
+              </h2>
+              <div id="stereo" class="accordion-collapse collapse" aria-labelledby="head-stereo" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>Computer vision plays a crucial role in enabling self-driving abilities in motor vehicles. In this blog, we will explore how computer vision, along with other sensor data, such as multi-cameras, LiDAR, IMU, and GPS, can be utilized to collect data and make predictions for self-driving motorcycles.</p>
+                  <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p> -->
+                  <a href="/blogs/stereo.html" class="btn btn-outline-dark rounded-pill p-2"> Read blog</a>
+                </div>
+              </div>
+            </div> 
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-2" aria-expanded="false" aria-controls="chapter-2">
+                  Computer Vision
+                </button>
+              </h2>
+              <div id="chapter-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>Computer vision is a field of artificial intelligence that enables machines to interpret and understand visual information from the world. It involves acquiring, processing, and analyzing images and videos to recognize patterns, detect objects, and make decisions. Applications include facial recognition, autonomous vehicles, medical imaging, and industrial automation, enhancing how machines perceive and interact with their environments.</p>
+                  <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p> -->
+                  <a href="/blogs/cv.html" class="btn btn-outline-dark rounded-pill p-2"> Read blog</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-3" aria-expanded="false" aria-controls="chapter-1">
+                  Robot Operating System
+                </button>
+              </h2>
+              <div id="chapter-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>ROS (Robot Operating System) is an open-source framework for developing robotic software. It provides tools, libraries, and conventions to simplify the creation of complex robot behaviors across various robotic platforms. ROS facilitates communication between components, hardware abstraction, and device control, allowing developers to focus on application-specific tasks. It supports modular design, making it widely used in research and industry for robotics development.</p>
+                  <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p> -->
+                  <a href="/blogs/ros.html" class="btn btn-outline-dark rounded-pill p-2"> Read blog</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-4" aria-expanded="false" aria-controls="chapter-4">
+                  Point Clouds
+                </button>
+              </h2>
+              <div id="chapter-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>Point clouds are collections of data points in three-dimensional space, typically generated by 3D scanning technologies like LiDAR or stereo cameras. Each point represents a sample on the surface of an object, capturing its shape and geometry. Point clouds are widely used in fields such as computer vision, robotics, and geospatial analysis for tasks like 3D modeling, object recognition, and environment mapping.</p>
+                  <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p> -->
+                  <a href="/blogs/pc.html" class="btn btn-outline-dark rounded-pill p-2"> Read blog</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="heading-5">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#chapter-5" aria-expanded="false" aria-controls="chapter-5">
+                  Global Positioning
+                </button>
+              </h2>
+              <div id="chapter-5" class="accordion-collapse collapse" aria-labelledby="heading-5" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>GNSS (Global Navigation Satellite System) is a network of satellites that provide geolocation and time information to GNSS receivers on Earth. It includes systems like GPS (USA), GLONASS (Russia), Galileo (EU), and BeiDou (China). GNSS enables accurate positioning and navigation for various applications, including mapping, surveying, transportation, and autonomous vehicles, by determining a receiver's exact location globally.</p>
+                  <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="head-cvav">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#cvav" aria-expanded="false" aria-controls="cvav">
+                  Computer Vision for Autonomous Vehicles
+                </button>
+              </h2>
+              <div id="cvav" class="accordion-collapse collapse" aria-labelledby="head-cvav" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>Computer vision plays a crucial role in enabling self-driving abilities in motor vehicles. In this blog, we will explore how computer vision, along with other sensor data, such as multi-cameras, LiDAR, IMU, and GPS, can be utilized to collect data and make predictions for self-driving motorcycles.</p>
+                  <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p> -->
+                  <a href="/blogs/cvav.html" class="btn btn-outline-dark rounded-pill p-2"> Read blog</a>
+                </div>
+              </div>
+            </div> 
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="head-hwsw">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hwsw" aria-expanded="false" aria-controls="hwsw">
+                  Hardware Software Integration
+                </button>
+              </h2>
+              <div id="hwsw" class="accordion-collapse collapse" aria-labelledby="head-hwsw" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>Hardware-software integration in robotics involves combining physical components like sensors, actuators, and processors with software systems that control and coordinate them. This integration ensures seamless communication between hardware and software, enabling robots to perceive their environment, make decisions, and perform tasks effectively. It is crucial for achieving reliable, real-time performance in various robotic applications, from industrial automation to autonomous navigation.</p>
+                  <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p> -->
+                  <a href="/blogs/hwsw.html" class="btn btn-outline-dark rounded-pill p-2"> Read blog</a>
+                </div>
+              </div>
+            </div> 
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="head-pred">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pred" aria-expanded="false" aria-controls="pred">
+                  Prediction using Machine Learning
+                </button>
+              </h2>
+              <div id="pred" class="accordion-collapse collapse" aria-labelledby="head-pred" data-bs-parent="#blogs">
+                <div class="accordion-body">
+                  <p>Machine learning-based prediction involves using algorithms to analyze data and identify patterns to forecast future outcomes. By training on historical data, models learn to predict values, classifications, or trends in unseen data. Applications range from predicting stock prices and weather conditions to identifying equipment failures and personalizing content. These predictions improve decision-making and automate complex processes in various fields.</p>
+                  <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis assumenda delectus sapiente quidem consequatur odit adipisci necessitatibus nemo aliquid minus modi tempore quibusdam quas vitae, animi ipsam nulla sunt alias.</p> -->
+                  <a href="/blogs/prediction.html" class="btn btn-outline-dark rounded-pill p-2"> Read blog</a>
+                </div>
+              </div>
+            </div> 
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- reviews list -->
+  <!-- <section id="reviews" class="bg-light">
+    <div class="container-lg">
+      <div class="text-center">
+        <h2><i class="bi bi-stars"></i>Book Reviews</h2>
+        <p class="lead">What my students have said about the book...</p>
+      </div>
+
+      <div class="row justify-content-center my-5">
+        <div class="col-lg-8">
+          <div class="list-group">
+            <div class="list-group-item py-3">
+              <div class="pb-2">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h5 class="mb-1">A must-buy for every aspiring web dev</h5>
+              <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error veniam sit expedita est illo maiores neque quos nesciunt, reprehenderit autem odio commodi labore praesentium voluptate repellat in id quisquam.</p>
+              <small>Review by Mario</small>
+            </div>
+            <div class="list-group-item py-3">
+              <div class="pb-2">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h5 class="mb-1">A must-buy for every aspiring web dev</h5>
+              <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error veniam sit expedita est illo maiores neque quos nesciunt, reprehenderit autem odio commodi labore praesentium voluptate repellat in id quisquam.</p>
+              <small>Review by Mario</small>
+            </div>
+            <div class="list-group-item py-3">
+              <div class="pb-2">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </div>
+              <h5 class="mb-1">A must-buy for every aspiring web dev</h5>
+              <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error veniam sit expedita est illo maiores neque quos nesciunt, reprehenderit autem odio commodi labore praesentium voluptate repellat in id quisquam.</p>
+              <small>Review by Mario</small>
+            </div>
+            <div class="list-group-item py-3">
+              <div class="pb-2">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h5 class="mb-1">A must-buy for every aspiring web dev</h5>
+              <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error veniam sit expedita est illo maiores neque quos nesciunt, reprehenderit autem odio commodi labore praesentium voluptate repellat in id quisquam.</p>
+              <small>Review by Mario</small>
+            </div>
+            <div class="list-group-item py-3">
+              <div class="pb-2">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </div>
+              <h5 class="mb-1">A must-buy for every aspiring web dev</h5>
+              <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur error veniam sit expedita est illo maiores neque quos nesciunt, reprehenderit autem odio commodi labore praesentium voluptate repellat in id quisquam.</p>
+              <small>Review by Mario</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- contact form -->
+  <!-- form-control, form-label, form-select, input-group, input-group-text -->
+  <section id="contact">
+    <div class="container-lg">
+      
+      <div class="text-center">
+        <h2>The Team</h2>
+      </div>
+      <div class="row justify-center">
+        <div class="col col-md-6">
+          <p class="lead">Swayansaasita: Phase-I is a research and development initiative by the <a href="https://www.niser.ac.in/~smishra">Subhankar Mishra Lab</a>, funded and supported by <a href=""></a>La Fondation Dassault Systèmes</a>, India. </p>
+          <ul>
+            <li><b>Dr. Subhankar Mishra</b> | Principle Investigator | 📧 : <a href="mailto:smishra@niser.ac.in">smishra@niser.ac.in</a></li>
+            <li><b>Jyothish Kumar J</b> | Research Scholar | 📧 : <a href="mailto:jyothishk.j@niser.ac.in">jyothishk.j@niser.ac.in</a></li>
+            <li><b>Shriman Keshri</b> | Research Scholar | 📧 : <a href="mailto:shriman.keshri@niser.ac.in">shriman.keshri@niser.ac.in</a></li>
+            <li><b>Anubhav Vishwakarma</b> | Research Scholar | 📧 : <a href="mailto:anubhav.vishwakarma@niser.ac.in">anubhav.vishwakarma@niser.ac.in</a></li>
+            <li><b>Harshit Aggrawal</b> | Summer Intern </li>
+          </ul>
+        </div>
+        <div class="col col-md-6">
+          <div class="row justify-content-top my-5">
+            
+            <div class="col-4 col-lg-7 col-xl-5 align-content-top">
+              <img src="/assets/dassault.jpg" class="img-fluid" alt="dassault">      
+            </div>
+            <div class="col-3 col-lg-5 col-xl-3 align-content-top">
+              <img src="/assets/niser.png" class="img-fluid" alt="niser">      
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row justify-content-center my-5">
+        <div class="col-3 col-md-2 col-xl-1 align-content-center">
+          <img src="/assets/niser.png" class="img-fluid" alt="niser">      
+          
+        </div>
+        <div class="col-4 col-md-3 col-xl-2 align-content-center">
+          <img src="/assets/dassault.png" class="img-fluid" alt="dassault">      
+        </div>
+      </div> -->
+      <!-- <ul>
+        <li><b>Dr. Subhankar Mishra</b> | Principle Investigator | 📧 : <a href="mailto:smishra@niser.ac.in">smishra@niser.ac.in</a></li>
+        <li><b>Jyothish Kumar J</b> | Research Scholar | 📧 : <a href="mailto:jyothishk.j@niser.ac.in">jyothishk.j@niser.ac.in</a></li>
+      </ul> -->
+    </div>
+  </section>
+
+  <!-- get updates / modal trigger -->
+  <section id="datasetdownload" class="bg-light" >
+    <div class="container">
+      <div class="text-center">
+        <h2>Pre-register for dataset.</h2>
+        <p class="lead">Dataset will be released soon.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <p class="text-muted my-4">We are currnetly in the process of collecting, post processing and annotating the dataset. The Data Collection plan is available to refer <a href="/data.html">here</a>.</p>
+          <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#reg-modal">
+            Get Dataset
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- modal itself -->
+  <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modal-title">Pre-register for dataset</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-center my-2">
+            <div class="col">
+              
+              <form>
+                <label for="email" class="form-label">Email address:</label>
+                <div class="input-group mb-4">
+                  <span class="input-group-text">
+                    <i class="bi bi-envelope-fill text-secondary"></i>
+                  </span>
+                  <input type="text" id="email" class="form-control" placeholder="e.g. mario@example.com" />
+                  <!-- tooltip -->
+                  <span class="input-group-text">
+                    <span class="tt" data-bs-placement="bottom" title="Enter an email address we can reply to.">
+                      <i class="bi bi-question-circle text-muted"></i>
+                    </span>
+                  </span>
+                </div>
+                <label for="name" class="form-label">Name:</label>
+                <div class="mb-4 input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-person-fill text-secondary"></i>
+                  </span>
+                  <input type="text" id="name" class="form-control" placeholder="e.g. Mario" />
+                  <!-- tooltip -->
+                  <span class="input-group-text">
+                    <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
+                      <i class="bi bi-question-circle text-muted"></i>
+                    </span>
+                  </span>
+                </div>
+                <label for="institute" class="form-label">Institute:</label>
+                <div class="mb-4 input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-person-fill text-secondary"></i>
+                  </span>
+                  <input type="text" id="institute" class="form-control" placeholder="e.g. Tata Institute of Fundamental Research. " />
+                  <!-- tooltip -->
+                  <span class="input-group-text">
+                    <span class="tt" data-bs-placement="bottom" title="Pretty self explanatory really...">
+                      <i class="bi bi-question-circle text-muted"></i>
+                    </span>
+                  </span>
+                </div>
+                <label for="subject" class="form-label">Purpose of Data Request</label>
+                <div class="mb-4 input-group">
+                  <span class="input-group-text">
+                    <i class="bi bi-chat-right-dots-fill text-secondary"></i>
+                  </span>
+                  <select class="form-select" id="subject">
+                    <option value="pricing" selected>Academic Research</option>
+                    <option value="content">Industrial Research</option>
+                    <option value="other">Commercial</option>
+                    <option value="other">Others</option>
+                  </select>
+                </div>
+                <div class="mb-4 mt-5 form-floating">
+                  <textarea class="form-control" id="query" style="height: 140px" placeholder="query"></textarea>
+                  <label for="query">Additional Details.</label>
+                </div>
+                <div class="mb-4 text-center">
+                  <button type="submit" class="btn btn-secondary">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis, exercitationem laboriosam nihil minus voluptatibus harum aliquam consequatur pariatur inventore dignissimos illum excepturi ratione ipsum sit iusto alias eligendi fugit laborum?</p>
+          <label for="modal-email" class="form-label">Your email address:</label>
+          <input type="text" class="form-control" id="modal-email" placeholder="e.g. mario@example.com"> -->
+        </div>
+        <div class="modal-footer justify-content-center">
+
+           <p>The download link will be sent to your email address shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- side panel / offcanvas -->
+  <div class="offcanvas offcanvas-bottom" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="sidebar-label">Citation</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>BibTex citation for this project is attached below. The contents of this project are availabe for research purposes and can be used with due citation to this project. </p>
+      <!-- dropdown -->
+      <pre class="language-tex">
+        @misc{jyothish_smishra_2024,
+          title = {Swayansaasita - Autonomous Two-Wheeler Driving - Phase 1},
+          author = {Jyothish, K.J., Keshri, S., Vishwakarma, A., and Mishra, S.},
+          year = {2024},
+          howpublished = {\url{https://www.niser.ac.in/~smishra/project/cs2303/}},
+          note = {Accessed: April 29, 2024}
+        }
+      </pre>
+    </div>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script>
+    const tooltips = document.querySelectorAll('.tt')
+    tooltips.forEach(t => {
+      new bootstrap.Tooltip(t)
+    })
+  </script>
+</body>
+</html>
