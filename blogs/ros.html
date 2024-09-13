@@ -1,0 +1,178 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swayansaasita</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <style>
+      section {
+        padding: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
+      <div class="container-xxl">
+        <!-- navbar brand / title -->
+        <a class="navbar-brand" href="#intro">
+          <span class="text-secondary fw-bold">
+            <i class="bi bi-robot"></i>
+            Swayansaasita
+          </span>
+        </a>
+        <!-- toggle button for mobile nav -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-end align-center"
+          id="main-nav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#objectives">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#contact">Contact Us</a>
+            </li>
+            <li class="nav-item d-md-none">
+              <a class="nav-link" href="#dataset">Download Dataset</a>
+            </li>
+            <li class="nav-item ms-2 d-none d-md-inline">
+              <a class="btn btn-secondary" href="/index.html#datasetdownload"
+                >Dataset</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-lg">
+      <h1 id="computer-vision-for-self-driving-motorcycles">
+        Robot Operating System (ROS)
+      </h1>
+      <p class="lead">by Harshit Agarwal, Summer Intern SMLab</p>
+      <br /><br />
+
+      <p>
+        When you think of robots, as a robotics engineer, the first thing to
+        come on your mind would be the miles of mind numbing codes for hardware
+        drivers. For device control, sensors, visualisation and servers. Sockets
+        for networking and alot lot more. That had been the case for ages in
+        Robotics until the advent of Robot Operating System (ROS). 
+      </p>
+    <p>
+      This technical blog is an introduction to ROS and its features. It is also a brief overview of how we use ROS in Swayansaasita.
+      The topics I'll cover in this blog are the following:
+      <ol>
+        <li><a href="#what-is-ros">What is ROS?</a></li>
+        <li><a href="#why-ros">Why ROS?</a></li>
+        <li><a href="#ros-architecture">ROS architecture</a></li>
+        <ol>
+            <li><a href="#ros-nodes">ROS Nodes</a></li>
+            <li><a href="#ros-messages-and-topics">ROS Messages and Topics</a></li>
+            <li><a href="#ros-services-and-actions">ROS Services and Actions</a></li>
+            <li><a href="#ros-bag-recordings">ROS Bag Recordings</a></li>
+        </ol>
+        <li><a href="#case-study-how-we-use-ros">Case Study: How we use ROS?</a></li>
+      </ol>
+      You can click on the hyperlinks to jump to the respective sections.
+    </p>
+    <h2 id="what-is-ros">What is ROS?</h2>
+    <p>ROS, or Robot Operating System, is a flexible framework for writing robot software. It is a collection of tools, libraries, and conventions that aim to simplify the task of creating complex and robust robot behavior across a wide variety of robotic platforms.</p>
+
+    <h2 id="why-ros">Why ROS?</h2>
+    <p>ROS provides a structured communications layer above the host operating systems of a heterogeneous compute cluster. ROS is language-agnostic, meaning you can use it with C++, Python, and other languages. It also has a large community and a wealth of resources, making it easier to find support and solutions to problems.</p>
+
+    <h2 id="ros-architecture">ROS Architecture</h2>
+    
+    <h3 id="ros-nodes">ROS Nodes</h3>
+    <p>Nodes are processes that perform computation. ROS is designed to be modular at a fine-grained scale; a robot control system usually comprises many nodes. For example, one node controls a laser range-finder, one node controls the robot's wheel motors, one node performs localization, one node performs path planning, and so on.</p>
+
+    <!-- Example case of a rosnode that controls a Stereo Camera-->
+
+    <h3 id="ros-messages-and-topics">ROS Messages and Topics</h3>
+    <p>Nodes communicate with each other by passing messages. A message is a simple data structure, comprising typed fields. Standard primitive types (integer, floating point, boolean, etc.) are supported, as are arrays of primitive types. Messages are transmitted on a topic, which is a named bus over which nodes exchange messages.</p>
+
+    <!-- Example case of Image Message and Topic and how it's structured -->
+
+
+    <h3 id="ros-services-and-actions">ROS Services and Actions</h3>
+    <p>Services in ROS allow nodes to send a request and receive a response. This is useful for tasks that are not continuous, such as querying the state of a sensor or commanding a robot to move to a specific location. Actions are similar to services but are designed for tasks that take time to complete, such as moving a robot arm to a position.</p>
+
+    <!-- Example case of a Ros Service that moves a Robot Front and Back on calling-->
+    <h3 id="ros-bag-recordings">ROS Bag Recordings</h3>
+    <p>ROS bags are a format for saving and playing back ROS message data. Bags are typically created by a tool like rosbag, which subscribes to one or more ROS topics, and writes the serialized message data to a file as it is received. This is useful for offline analysis and debugging.</p>
+
+    <!-- Example case of a Ros Bag Recording of a Robot's movement and sensor data-->
+     
+
+    <!--Structure of a .db3 rosbag-->
+    <h2 id="case-study-how-we-use-ros">Case Study: How we use ROS?</h2>
+    <p>In Swayansaasita, we use ROS to integrate various sensors and actuators on our robotic platforms. ROS allows us to modularize our code, making it easier to develop, test, and deploy new features. We also use ROS's visualization tools to monitor the state of our robots in real-time and to debug issues as they arise.</p>
+
+
+
+      <h2 id="conclusion">Conclusion</h2>
+
+      <h2 id="resources">Resources</h2>
+
+      <h2 id="references">References</h2>
+      <ol>
+        <li id="ref1">
+          <a href="http://www.robotics.stanford.edu/~ang/papers/icraoss09-ROS.pdf"
+            >ROS: An Open-Source Robot Operating System
+          </a>
+        </li>
+
+        <li id="ref2">
+          <a href="https://web2.qatar.cmu.edu/~gdicaro/16311-Fall17/slides/Lab-1-ROS-Intro.pdf"
+            >Introduction to ROS - Carnegie Mellon University Qatar
+          </a>
+        </li>
+        <li id="ref3">
+          <a href="https://www.ros.org/about-ros/"
+            >About ROS - ROS.org
+          </a>
+        </li>
+      </ol>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltips = document.querySelectorAll(".tt");
+      tooltips.forEach((t) => {
+        new bootstrap.Tooltip(t);
+      });
+    </script>
+  </body>
+</html>

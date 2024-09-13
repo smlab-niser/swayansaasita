@@ -90,11 +90,11 @@
 
     <div class="container-lg">
       <h1 id="prediction-in-self-driving-vehicles">
-        Prediction in Self-Driving Vehicles
+        Pointclouds
       </h1>
       <p class="lead">by Harshit Agarwal, Summer Intern SMLab</p>
       <br /><br />
-
+ds
       <p>
         For any vehicle to perform autonomous driving, it&#39;s primary task is
         to be able to predict a path and map of the surrounding given it&#39;s
@@ -111,8 +111,8 @@
             >What is Autonomy and autonomous driving ?</a
           >
         </li>
-        <a href="#introduction-to-mapping-and-path-prediction"><li>Introduction to Mapping and Path Prediction</li></a>
-        <a href="#problem-of-sensor-fusion"><li>Problem of Sensor Fusion</li></a>
+        <li>Introduction to Mapping and Path Prediction</li>
+        <li>Problem of Sensor Fusion</li>
         <li>Use of Bayesian Recursion and Kalman Filters</li>
         <li>Pose Graph Estimation</li>
         <li>Use of Machine Learning and Deep Learning in path prediction</li>
@@ -246,22 +246,7 @@
         </ul>
       </p>
 
-      Data associations are done and the graph is optimized using optimization algorithms like Gauss-Newton, Levenberg-Marquardt, etc. <br>
-      <!-- The Nodes and Edges are represented as: <br>
-      $x = [x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}]$ <br>
-      $e = [e_1, e_2, e_3, e_4, e_5, e_6, e_7, e_8, e_9, e_{10}]$ <br>
-      The optimization problem can be represented as: <br>
-      $x^* = \arg \min_x \sum_{i=1}^{10} e_i^T \Omega_i e_i$ <br>
-      Where $\Omega_i$ is the information matrix. <br> -->
-
-
       <h3>Loop Closures</h3>
-      Loop Closures are the constraints between non-sequential nodes. They are used to correct the drift in the trajectory. <br>
-
-      <hr>
-      Here's an example of a pose-graph-optimization: <br>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/d9ItdnJFOhU?si=jLh4_VqldxOQJDmE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <hr>
       <h2 id="use-of-machine-learning-and-deep-learning-in-path-prediction">
         Use of Machine Learning and Deep Learning in path prediction
       </h2>
@@ -272,25 +257,6 @@
         predictions about future paths, taking into account various factors such
         as road conditions, traffic, and pedestrian behavior.
       </p>
-      <p>
-        Some popular machine learning and deep learning models used in path
-        prediction include recurrent neural networks (RNNs), long short-term
-        memory (LSTM) networks, and convolutional neural networks (CNNs).
-        </p>
-
-      <p>
-        Methods like Iterative Closest Point and Fast Global Registration are often used traditionally to align the point clouds and estimate the path. <br>
-        In Iterative Closest Point, the algorithm uses two general steps to find the transformations between two frames. First, correspondences between the frames are
-        found. These correspondences are found by selecting the closest points as corresponding, hence the name. Next, the best transformation, T, matching these sets
-        of points is found by minimizing an objective function. <br>
-        Mathematically, It's represented as: $E(T) = \sum_{\{x,y\}\in K}  ||x-Ty||^{2}$ with (x, y) ∈ K denoting sets of points (x, y) from the correspondence set K.
-      </p>
-
-      <p>
-        Methods like Registration Loss Learning, are used to learn the registration loss function. The registration loss function is used to measure the quality of the registration between two point clouds. By learning this function, the model can optimize the registration process and improve the accuracy of the path prediction.
-        Another common SLAM algorithm based on Machine Learning is DeepSLAM. It uses RCNN, VGGNet and LSTM to make a Tracking and Mapping Net. Using these nets and various loss functions like Spatial (Photometric and Pose Loss) and Temporal Image (3d Geometric Loss) losses, it creates Error Maps and retrains the model.
-      </p>
-      
       <h2 id="major-challenges-faced-during-path-detection-like-">
         Major Challenges faced during path detection like:
       </h2>
@@ -318,7 +284,7 @@
             methods, check out SMLAB LAB TALKS - ORB-SLAM 3</a
           >
         </li>
-        <li><a href="https://www.youtube.com/watch?v=-XU54IsG8Vo">A cool little explanation by Computerphile on SLAM and robot mapping</a></li>
+        <li>dsd</li>
       </ol>
       <h2 id="references">References</h2>
       <ol>
@@ -327,18 +293,6 @@
             href="http://ais.informatik.uni-freiburg.de/teaching/ws13/mapping/index_en.php"
             >Robot Mapping - WS 2013/14 ~ Cyrill Stachniss</a
           >
-        </li>
-        <li>
-          <a href="http://www2.informatik.uni-freiburg.de/~stachnis/pdf/grisetti10titsmag.pdf"
-            >Grisetti, G., Stachniss, C., & Burgard, W. (2010). Improved
-            Techniques for Grid Mapping With Rao-Blackwellized Particle Filters.
-            IEEE Transactions on Robotics, 23(1), 34-46.</a>
-        </li>
-        <li>
-          <a href="https://www.diva-portal.org/smash/get/diva2:1612438/FULLTEXT01.pdf">
-            A Survey on SLAM Techniques for Autonomous Vehicles - Amanpreet
-            Kaur</a
-          </a>
         </li>
       </ol>
     </div>
