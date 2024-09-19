@@ -89,200 +89,66 @@
     </nav>
 
     <div class="container-lg">
-      <h1 id="prediction-in-self-driving-vehicles">
-        Pointclouds
-      </h1>
+      <h1 id="prediction-in-self-driving-vehicles">Pointclouds</h1>
       <p class="lead">by Harshit Agarwal, Summer Intern SMLab</p>
-      <br /><br />
-ds
+      <br></br>
+      <p>Pointclouds</p>
       <p>
-        For any vehicle to perform autonomous driving, it&#39;s primary task is
-        to be able to predict a path and map of the surrounding given it&#39;s
-        current control and observations.
-      </p>
-      <p>
-        Today, we&#39;ll be discussing the process of motion prediction in
-        autonomous vehicles.
+        Today, we&#39;ll be discussing pointclouds, the standard pointcloud
+        library and the uses of pointclouds.
       </p>
       <p>The topics covered in this article will be:</p>
       <ol>
-        <li>
-          <a href="#what-is-autonomy-and-autonomous-driving"
-            >What is Autonomy and autonomous driving ?</a
-          >
-        </li>
-        <li>Introduction to Mapping and Path Prediction</li>
-        <li>Problem of Sensor Fusion</li>
-        <li>Use of Bayesian Recursion and Kalman Filters</li>
-        <li>Pose Graph Estimation</li>
-        <li>Use of Machine Learning and Deep Learning in path prediction</li>
-        <li>
-          Major Challenges faced during path detection like:
-          <ul>
-            <li>Moving Objects (Dynamics)</li>
-            <li>Lower feature pool</li>
-          </ul>
-        </li>
-      </ol>
-      <h2 id="what-is-autonomy-and-autonomous-driving">
-        What is Autonomy and autonomous driving ?
-      </h2>
-      <p>
-        Autonomy refers to the ability of a vehicle to operate and make
-        decisions without human intervention. Autonomous driving, also known as
-        self-driving or driverless driving, is the concept of vehicles being
-        able to navigate and drive themselves without the need for a human
-        driver.
-      </p>
-      <h2 id="introduction-to-mapping-and-path-prediction">
-        Introduction to Mapping and Path Prediction
-      </h2>
-      <p>
-        Mapping and path prediction are crucial components of autonomous driving
-        systems. Mapping involves creating a detailed representation of the
-        surrounding environment, including roads, obstacles, and landmarks. Path
-        prediction, on the other hand, focuses on estimating the future
-        trajectory of the vehicle based on its current state and observations.
-      </p>
-      <h3>Mathematical Definition of the SLAM Problem</h3>
-      <p>
-        Given: <br />
-        \(x_{0:t}\) - The path of the robot from time 0 to t <br />
-        \(m\) - The map of the environment <br />
-        \(z_{1:t}\) - The observations up to time t <br />
-        \(u_{1:t}\) - The control inputs up to time t <br />
-        Required: <br />
-        \(p(x_{0:t}, m | z_{1:t}, u_{1:t})\) - The posterior over the path and
-        map given the observations and control inputs
-      </p>
-
-      <h2 id="problem-of-sensor-fusion">Problem of Sensor Fusion</h2>
-      <p>
-        Sensor fusion is the process of combining data from multiple sensors to
-        obtain a more accurate and comprehensive understanding of the
-        environment. In autonomous driving, sensor fusion plays a critical role
-        in integrating information from various sensors such as cameras, lidar,
-        radar, and GPS to create a reliable perception of the surroundings.
-      </p>
-
-      <h2 id="use-of-bayesian-recursion-and-kalman-filters">
-        Use of Bayesian Recursion and Kalman Filters
-      </h2>
-      <p>
-        The problem of State Estimation is to estimate the state $x$ of a system
-        given observation $z$ and controls $u$. <br />
-        To Find: $p(x_t | z_{1:t}, u_{1:t})$ <br />
-      </p>
-      <h3>Bayes Filter</h3>
-      <p>
-        The Bayes Filters or Recursive Bayes Filter works with two steps. The
-        prediction and correction steps.<br />
-        $\overline{bel(x_{t})} = (p(x_t | z_{1:t-1}, u_{1:t}))$ <br />
-        They can be mathematically defined as - <br />
-        Prediction Step: <br />
-        $\overline{bel(x_{t})} = \int p(x_t | x_{t-1}, u_t) bel(x_{t-1})
-        dx_{t-1}$ <br />
-
-        Correction Step: <br />
-        $bel(x_{t})= \eta p(z_t | x_t) \overline{bel(x_{t})}$
-      </p>
-      <h3>Kalman Filter</h3>
-      The problem of Bayesian Recursion can now be solved in various ways.
-      Mainly by Kalman Filters or Particle Filters. Models can linear and
-      non-linear. And Distributions can be Gaussian or otherwise. Kalman Filters
-      are estimators for the linear Gaussian case, however later we extend it
-      for non-linear cases as well. <br />
-
-      A Gaussian Distribution is represented as: $p(x) = \det(2\pi
-      \Sigma)^{-1/2} \exp(-\frac{1}{2}(x-\mu)^T \Sigma^{-1} (x-\mu))$ <br />
-
-      The Linear Model can be represented as: <br />
-      $x_t = A_t x_{t-1} + B_t u_t + \epsilon_t$ <br />
-      $z_t = C_t x_t + \delta_t$ <br />
-      Where $\epsilon_t$ and $\delta_t$ are the noise terms. <br />
-
-      The motion under Gaussian Noise can be represented as: <br />
-      $p(x_t | x_{t-1}, u_t) =\det(2\pi R_{t})^{-1/2}
-      \exp(-\frac{1}{2}(x_{t}-A_{t}x_{t-1}-B_{t}u_{t})^T R_{t}^{-1}
-      (x_{t}-A_{t}x_{t-1}-B_{t}u_{t})) $ <br />
-
-      The observation model under Gaussian Noise can be represented as: <br />
-      $p(x_t | x_{t-1}, u_t) =\det(2\pi Q_{t})^{-1/2}
-      \exp(-\frac{1}{2}(z_{t}-C_{t}x_{t})^T Q_{t}^{-1} (z_{t}-C_{t}x_{t})) $
-      <br />
-
-      Thus, the Kalman Filter algorithm becomes the following as shown in the
-      figure below.
-
-      <div class="col-12 col-lg-6">
-        <img
-          src="../assets/kalman.png"
-          class="img-fluid"
-          alt="ebook"
-          title="Kalman Filter Algorithm"
-        />
-      </div>
-
-      <h2 id="pose-graph-estimation">Pose Graph Estimation</h2>
-      <p>
-        Pose graph estimation is a technique used in simultaneous localization
-        and mapping (SLAM) to estimate the trajectory of a robot and the map of
-        the environment. It involves representing the robot's poses and the
-        constraints between them as a graph, where nodes correspond to poses and
-        edges represent the constraints. By optimizing the graph structure, the
-        robot can refine its trajectory and map, improving its localization and
-        mapping accuracy.
-      </p>
-      <p>
-        <b>Nodes</b> can represent: 
+        <li> <a href="#introduction-to-pointclouds">Introduction to PointClouds</a></li>
+        <li>What is PCL?</li>
+        <li>Structure of PointCloud Data</li>
+        <li>Processing of Pointclouds for:</li>
         <ul>
-          <li>Robot poses</li>
-          <li>Landmark locations</li>
-        </ul><br/>
-        <b>Edges</b> can represent:
-        <ul>
-          <li>Landmark observations</li>
-          <li>Odometry measurements</li>
+          <li>Denoising</li>
+          <li>Visualisation</li>
+          <li>Downsampling</li>
         </ul>
-      </p>
+        <li>ICP</li>
+        <li>Uses of Pointclouds</li>
+      </ol>
 
-      <h3>Loop Closures</h3>
-      <h2 id="use-of-machine-learning-and-deep-learning-in-path-prediction">
-        Use of Machine Learning and Deep Learning in path prediction
-      </h2>
-      <p>
-        Machine learning and deep learning algorithms have revolutionized path
-        prediction in autonomous driving. By training models on large datasets,
-        these techniques enable vehicles to learn patterns and make accurate
-        predictions about future paths, taking into account various factors such
-        as road conditions, traffic, and pedestrian behavior.
-      </p>
-      <h2 id="major-challenges-faced-during-path-detection-like-">
-        Major Challenges faced during path detection like:
-      </h2>
-      <h3 id="moving-objects-dynamics-">Moving Objects (Dynamics)</h3>
-      <p>
-        Detecting and predicting the behavior of moving objects, such as other
-        vehicles, pedestrians, and cyclists, is a significant challenge in path
-        detection. The autonomous system needs to accurately track and
-        anticipate the movements of these dynamic objects to ensure safe and
-        efficient navigation.
-      </p>
-      <h3 id="lower-feature-pool">Lower feature pool</h3>
-      <p>
-        In certain scenarios, such as poorly lit environments or adverse weather
-        conditions, the availability of reliable features for path detection may
-        be limited. This poses a challenge for autonomous driving systems, as
-        they need to rely on alternative methods or sensor modalities to
-        accurately perceive the environment and predict the path.
-      </p>
+
+
+
+      <h2 id="introduction-to-pointclouds">Introduction to PointClouds</h2>
+      <p>Pointclouds are a collection of data points defined by a given coordinate system...</p>
+
+      <h2 id="what-is-pcl">What is PCL?</h2>
+      <p>The Point Cloud Library (PCL) is a standalone, large scale, open project for 2D/3D image and point cloud processing...</p>
+
+      <h2 id="structure-of-pointcloud-data">Structure of PointCloud Data</h2>
+      <p>PointCloud data is typically structured in a way that each point contains information about its position in space...</p>
+
+      <h2 id="processing-of-pointclouds">Processing of Pointclouds for:</h2>
+      <h3 id="denoising">Denoising</h3>
+      <p>Denoising is the process of removing noise from the pointcloud data...</p>
+
+      <h3 id="visualisation">Visualisation</h3>
+      <p>Visualisation involves rendering the pointcloud data in a way that it can be easily interpreted...</p>
+
+      <h3 id="downsampling">Downsampling</h3>
+      <p>Downsampling is the process of reducing the number of points in the pointcloud data...</p>
+
+      <h2 id="icp">ICP</h2>
+      <p>Iterative Closest Point (ICP) is an algorithm employed to minimize the difference between two clouds of points...</p>
+
+      <h2 id="uses-of-pointclouds">Uses of Pointclouds</h2>
+      <p>Pointclouds have a wide range of applications including in robotics, autonomous driving, and 3D modeling...</p>
+
+      <h2>Conclusion</h2>
+
       <h2 id="resources">Resources</h2>
       <ol>
         <li>
-          <a href="https://smlab.niser.ac.in/labtalks/talks/orb-slam3/"
-            >For a brief presentation on one of the state-of-the-art SLAM
-            methods, check out SMLAB LAB TALKS - ORB-SLAM 3</a
-          >
+          <a href="https://www.youtube.com/watch?v=dhzLQfDBx2Q"
+            >ICP & Point Cloud Registration - Part 1: Known Data Association &
+            SVD (Cyrill Stachniss, 2021)
+          </a>
         </li>
         <li>dsd</li>
       </ol>
@@ -290,8 +156,18 @@ ds
       <ol>
         <li>
           <a
-            href="http://ais.informatik.uni-freiburg.de/teaching/ws13/mapping/index_en.php"
-            >Robot Mapping - WS 2013/14 ~ Cyrill Stachniss</a
+            href="https://www.diag.uniroma1.it/~nardi/Didattica/LabAI/matdid/pcl_intro.pdf"
+            >Introduction to PointClouds</a
+          >
+        </li>
+        <li>
+          <a href="https://pointclouds.org/documentation/">PCL Documentation</a>
+        </li>
+        <li>
+          <a
+            href="https://www.nist.gov/system/files/documents/2019/04/08/16d_point_cloud_management_-_jesse_zahner.pdf#:~:text=Point%20clouds%20are%20the%20millions,formed%20through%20many%20different%20methods."
+          >
+            Point Cloud Management</a
           >
         </li>
       </ol>
