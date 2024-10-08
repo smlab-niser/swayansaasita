@@ -1,161 +1,465 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swayansaasita</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <style>
+      section {
+        padding: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
+      <div class="container-xxl">
+        <!-- navbar brand / title -->
+        <a class="navbar-brand" href="#intro">
+          <span class="text-secondary fw-bold">
+            <i class="bi bi-robot"></i>
+            Swayansaasita
+          </span>
+        </a>
+        <!-- toggle button for mobile nav -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swayansaasita</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <style>
-    section{
-      padding: 60px 0;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
-    <div class="container-xxl">
-      <!-- navbar brand / title -->
-      <a class="navbar-brand" href="#intro">
-        <span class="text-secondary fw-bold">
-          <i class="bi bi-robot"></i>
-          Swayansaasita
-        </span>
-      </a>
-      <!-- toggle button for mobile nav -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- navbar links -->
-      <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html#objectives">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html#blogs">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html#contact">Contact Us</a>
-          </li>
-          <li class="nav-item d-md-none">
-            <a class="nav-link" href="#dataset">Downlaod Dataset</a>
-          </li>
-          <li class="nav-item ms-2 d-none d-md-inline">
-            <a class="btn btn-secondary" href="/index.html#datasetdownload">Dataset</a>
-          </li>
-          
-        </ul>
+        <!-- navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-end align-center"
+          id="main-nav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#objectives">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#contact">Contact Us</a>
+            </li>
+            <li class="nav-item d-md-none">
+              <a class="nav-link" href="#dataset">Download Dataset</a>
+            </li>
+            <li class="nav-item ms-2 d-none d-md-inline">
+              <a class="btn btn-secondary" href="/index.html#datasetdownload"
+                >Dataset</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+    <div class="container-lg">
+      <h1 id="computer-vision-for-self-driving-motorcycles">Computer Vision</h1>
+      <p class="lead">by Harshit Agarwal, Summer Intern SMLab</p>
+      <br /><br />
+
+      <p>
+        Computer vision (herein refered as cv) plays a crucial role in enabling
+        self-driving abilities in motor vehicles. In this blog, we will explore
+        how cv works and why it is essential in the development of self-driving
+        motorcycles and autonomous driving (herein referred to as AD)
+      </p>
+      <p>
+        The topics we&#39;ll cover are:<br />I. The idea and components behind
+        cv<br />II. The integration of feature extraction, data association and
+        photogrammetry in Motor Vehicles<br />III. The challenges faced in CV
+        for autonomous driving
+      </p>
+      <h2 id="what-is-computer-vision">What is Computer Vision</h2>
+      <p>
+        Before understanding CV, lets first understand Vision. What does it mean
+        to have vision ? To have vision is the ability to acquire, process,
+        analyse and understand things in the electromagnetic spectrum.
+      </p>
+      <p>
+        Thus we could say that CV can be extended from this definition to be
+        vision for digital images. <sup><a href="#ref1">1</a></sup>
+      </p>
+      <p>
+        In CV our goal becomes to extract high-level features corresponding
+        understanding from digital images. We do this by multiple steps starting
+        from extracting very low level features, to processing these low level
+        features in-order to filter unnecessary features that end up increasing
+        computational power. We then associate these low lovel features to form
+        a more complete understanding of the images.
+      </p>
+      <p>
+        The understanding of images can generally be for the following three
+        tasks: <sup><a href="#ref2">2</a></sup>
+      </p>
+      <ol>
+        <li>
+          <strong>Segmentation:</strong> The task of being able to classify a
+          particular set of pixels into an object.
+        </li>
+        <li>
+          <strong>Classification:</strong> The task of detecting what sort of
+          objects are in an image as a whole.
+        </li>
+        <li>
+          <strong>Detection:</strong> The task of localizing an object in an
+          image.
+        </li>
+      </ol>
+      <div class="container-md g-5">
+        <div class="col-12 col-lg-6">
+          <img
+            src="../assets/cv_figure1.png"
+            class="img-fluid"
+            alt="ebook"
+            title="Image describes the difference between classification, detection and segmentation"
+          />
+        </div>
+      </div>
+      <!-- <p><a href="#ref3"><img class="w-2"src="cv_figure1.png" title="Image describes the difference between classification, detection and segmentation" alt="image describing the differences in classification, detection and segmentation" /></a></p></div> -->
+      <h2 id="brief-introduction-to-autonomous-driving">
+        Brief introduction to Autonomous Driving
+      </h2>
+      <p>
+        The problem of AD is essentially the ability to predict a robot or in
+        this case, self driving motorcycle&#39;s trajectory with the digital
+        images, and other sensor data acquired and analysed.
+      </p>
+      <p>
+        CV comes into play in AD in all of the steps involving processing of the
+        images post acquisition through the LiDAR, RGBD and other camera
+        sensors.
+      </p>
+      <p>
+        For reading more about how AD Works and the use of Predictions, refer to
+        <a href="/blog/prediction.md">this link</a>
+      </p>
+      <h2 id="feature-extractions">Feature Extractions</h2>
+      <p>
+        Feature extraction is a crucial step in computer vision that involves
+        identifying and describing distinctive patterns or keypoints in an
+        image. These features serve as the basis for further analysis and
+        understanding of the image content.
+      </p>
+      <p>
+        In the context of autonomous driving (AD), feature extraction plays a
+        vital role in processing the images captured by sensors such as LiDAR,
+        RGBD, and cameras. By extracting relevant features from these images, AD
+        systems can detect and recognize objects, localize them in the
+        environment, and make predictions about their trajectories.
+      </p>
+      <!-- There are several popular algorithms for feature extraction in computer vision. One such algorithm is SIFT (Scale-Invariant Feature Transform), which detects and describes keypoints that are invariant to scale, rotation, and affine transformations. Another algorithm is BRISK (Binary Robust Invariant Scalable Keypoints), which uses a binary descriptor to represent keypoints and is designed for real-time applications. SURF (Speeded-Up Robust Features) and ORB (Oriented FAST and Rotated BRIEF) are other feature extraction algorithms commonly used in computer vision tasks. -->
+      <p>
+        By leveraging the following methods of feature extractions, AD systems
+        can make sense of the environment, identify objects of interest, and
+        make informed decisions based on the analyzed data:
+      </p>
+      <h3 id="keypoints-and-descriptors">Keypoints and Descriptors</h3>
+      <h4 id="-sift-"><strong>SIFT</strong></h4>
+      <p>
+        SIFT (Scale-Invariant Feature Transform) is a popular algorithm used for
+        feature extraction in computer vision. It detects and describes
+        keypoints in an image that are invariant to scale, rotation, and affine
+        transformations. SIFT features are robust and can be used for various
+        tasks such as image matching, object recognition, and image stitching.
+      </p>
+      <h4 id="-brisk-"><strong>BRISK</strong></h4>
+      <p>
+        BRISK (Binary Robust Invariant Scalable Keypoints) is another feature
+        extraction algorithm that is designed to be fast and efficient. It uses
+        a binary descriptor to represent keypoints, making it suitable for
+        real-time applications. BRISK features are robust to changes in lighting
+        conditions and can handle large scale and rotation variations.
+      </p>
+      <h4 id="-surf-"><strong>SURF</strong></h4>
+      <p>
+        SURF (Speeded-Up Robust Features) is a feature extraction algorithm that
+        is similar to SIFT but is faster and more efficient. It uses a
+        combination of scale-space extrema and Haar wavelet responses to detect
+        keypoints. SURF features are robust to changes in scale, rotation, and
+        affine transformations, making them suitable for various computer vision
+        tasks.
+      </p>
+      <h4 id="-orb-"><strong>ORB</strong></h4>
+      <p>
+        ORB (Oriented FAST and Rotated BRIEF) is a feature extraction algorithm
+        that combines the speed of FAST (Features from Accelerated Segment Test)
+        and the robustness of BRIEF (Binary Robust Independent Elementary
+        Features). It detects keypoints using the FAST algorithm and computes a
+        binary descriptor using the BRIEF algorithm. ORB features are fast to
+        compute and can be used for real-time applications.
+      </p>
+      <p>
+        These different extracted features can now be used in order to make
+        sense of the high level understanding.
+      </p>
+      <h2 id="data-associations">Data Associations</h2>
+      <p>
+        Data associations in computer vision refer to the process of linking or
+        associating data from different sources or frames to establish
+        correspondences or relationships between them. In the context of
+        autonomous driving, data associations play a crucial role in
+        understanding the environment and making informed decisions.
+      </p>
+      <p>
+        One common application of data associations in autonomous driving is
+        object tracking. By associating data from consecutive frames, such as
+        bounding boxes or keypoints, the system can track the movement of
+        objects over time. This information is essential for predicting object
+        trajectories and ensuring the safety of the vehicle.
+      </p>
+      <p>
+        Another use case of data associations is in multi-sensor fusion.
+        Autonomous vehicles often rely on multiple sensors, such as cameras,
+        LiDAR, and radar, to perceive the environment. By associating data from
+        these different sensors, the system can create a more comprehensive and
+        accurate representation of the surroundings. This fusion of data enables
+        better object detection, localization, and scene understanding.
+      </p>
+      <p>
+        Data associations can be challenging due to various factors, including
+        occlusions, sensor noise, and object appearance changes. Robust
+        algorithms and techniques, such as Kalman filters, particle filters, and
+        graph-based methods, are commonly used to handle these challenges and
+        establish reliable associations.
+      </p>
+      <p>
+        In summary, data associations are a fundamental aspect of computer
+        vision in autonomous driving. They enable the system to track objects,
+        fuse data from multiple sensors, and make informed decisions based on
+        the analyzed information.
+      </p>
+      <h2 id="photogrammetry">Photogrammetry</h2>
+      <p>
+        Photogrammetry is the science and technology of extracting geometric
+        information from photographs or digital images. It involves capturing
+        multiple images of an object or a scene from different angles and using
+        these images to reconstruct the 3D structure and measurements of the
+        subject.
+      </p>
+      <p>
+        The process of photogrammetry typically involves the following steps:
+      </p>
+      <ol>
+        <li>
+          <p>
+            <strong>Image Acquisition</strong>: Multiple images of the object or
+            scene are captured using cameras or other imaging devices. These
+            images should cover the subject from different viewpoints and
+            angles.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Camera Calibration</strong>: The intrinsic and extrinsic
+            parameters of the camera(s) used for image acquisition need to be
+            calibrated. This involves determining the camera&#39;s focal length,
+            principal point, lens distortion, and the relationship between the
+            camera coordinate system and the world coordinate system.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Feature Extraction</strong>: Keypoints or distinctive
+            features are extracted from the images. These features can be
+            points, edges, corners, or other visual patterns that can be
+            reliably detected and matched across multiple images.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Feature Matching</strong>: The extracted features from
+            different images are matched to establish correspondences. This is
+            done by comparing the descriptors or characteristics of the features
+            and finding the best matches based on similarity measures.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Triangulation</strong>: Using the matched features, the 3D
+            positions of the corresponding points in the scene are estimated.
+            This is done by triangulating the rays of light that pass through
+            the camera centers and intersect with the matched features.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Bundle Adjustment</strong>: The estimated 3D positions of
+            the points and the camera parameters are refined to minimize the
+            reprojection errors. This optimization step ensures that the
+            reconstructed 3D structure is consistent across all images and
+            accurately represents the real-world scene.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Surface Reconstruction</strong>: The reconstructed 3D points
+            are used to create a surface or mesh representation of the object or
+            scene. This can be done using techniques such as Delaunay
+            triangulation or voxel-based methods.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Texture Mapping</strong>: The captured images are projected
+            onto the reconstructed surface to create a realistic textured 3D
+            model. This step enhances the visual appearance of the reconstructed
+            object or scene.
+          </p>
+        </li>
+      </ol>
+      <p>
+        Photogrammetry pipelines can vary depending on the specific application
+        and the available resources. Some pipelines may involve additional steps
+        such as image preprocessing, image rectification, or dense point cloud
+        generation. The mathematical principles underlying photogrammetry
+        include concepts from geometry, linear algebra, optimization, and
+        computer vision.
+      </p>
+      <p>
+        Overall, photogrammetry is a powerful technique that enables the
+        creation of accurate 3D models from 2D images. It finds applications in
+        various fields such as architecture, archaeology, virtual reality, and
+        industrial metrology.
+      </p>
+      <p>
+        Note: We have covered Simultaneous Localisation and Mapping (SLAM) in
+        our <a href="prediction.html">prediction</a> blog.
+      </p>
+      <h2 id="challenges-faced">Challenges faced</h2>
+      <h3 id="handling-varied-lighting-conditions">
+        Handling Varied Lighting Conditions
+      </h3>
+      <p>
+        One of the challenges in computer vision is handling varied lighting
+        conditions. Different lighting conditions can affect the appearance of
+        objects in an image, making it difficult to accurately detect and
+        classify them. To address this challenge, computer vision algorithms
+        need to be robust to changes in lighting and capable of adapting to
+        different lighting conditions.
+      </p>
+      <h3 id="object-detection-and-classification">
+        Object Detection and Classification
+      </h3>
+      <p>
+        Another challenge in computer vision is object detection and
+        classification. This involves accurately identifying and categorizing
+        objects in an image. Object detection algorithms need to be able to
+        locate objects of interest and classify them correctly. This task
+        becomes more challenging when dealing with complex scenes, occlusions,
+        and variations in object appearance.
+      </p>
+      <h3 id="real-time-processing">Real-Time Processing</h3>
+      <p>
+        Real-time processing is a significant challenge in computer vision. Many
+        applications, such as autonomous driving and surveillance systems,
+        require real-time analysis of video streams. This means that computer
+        vision algorithms need to be efficient and capable of processing large
+        amounts of data in real-time. Optimizations, such as parallel processing
+        and hardware acceleration, are often employed to achieve real-time
+        performance.
+      </p>
+      <h3 id="robustness-to-environmental-factors">
+        Robustness to Environmental Factors
+      </h3>
+      <p>
+        Computer vision algorithms need to be robust to environmental factors,
+        such as noise, clutter, and variations in camera viewpoints. These
+        factors can introduce uncertainties and make it challenging to
+        accurately analyze and interpret visual data. Robustness to
+        environmental factors involves developing algorithms that can handle
+        these uncertainties and produce reliable results in various real-world
+        scenarios.
+      </p>
+      <h2 id="conclusion">Conclusion</h2>
+      <p>
+        In conclusion, feature extraction methods such as SIFT, BRISK, SURF, and
+        ORB play a crucial role in computer vision systems. They enable the
+        system to detect and describe keypoints in images, making them robust to
+        scale, rotation, and affine transformations. These extracted features
+        can be used for various tasks such as image matching, object
+        recognition, and image stitching.
+      </p>
+      <p>
+        Data associations are essential in autonomous driving systems as they
+        establish correspondences between data from different sources or frames.
+        They enable object tracking, multi-sensor fusion, and better
+        understanding of the environment.
+      </p>
+      <p>
+        Photogrammetry is a powerful technique for extracting geometric
+        information from photographs or digital images. It involves capturing
+        multiple images, calibrating cameras, extracting features, matching
+        them, triangulating 3D positions, refining parameters, reconstructing
+        surfaces, and mapping textures. Photogrammetry finds applications in
+        architecture, archaeology, virtual reality, and industrial metrology.
+      </p>
+      <p>
+        Computer vision faces challenges such as handling varied lighting
+        conditions, object detection and classification, real-time processing,
+        and robustness to environmental factors. Overcoming these challenges
+        requires robust algorithms that can adapt to different lighting
+        conditions, accurately detect and classify objects, process data in
+        real-time, and handle uncertainties in various scenarios.
+      </p>
+      <p>
+        In conclusion, computer vision is a rapidly evolving field with numerous
+        applications and challenges. By leveraging feature extraction methods,
+        data associations, and photogrammetry techniques, we can make
+        significant advancements in various domains.
+      </p>
+      <h2 id="resources">Resources</h2>
+
+      <h2 id="references">References</h2>
+      <ol>
+        <li id="ref1">
+          <a href="https://en.wikipedia.org/wiki/Computer_vision"
+            >Computer Vision - Wikipedia
+          </a>
+        </li>
+        <li id="ref2">
+          <a href="https://blogs.nvidia.com/blog/what-is-computer-vision/"
+            >What is Computer Vision - NVIDIA
+          </a>
+        </li>
+        <li id="ref3">
+          <a href="https://docs.ultralytics.com/guides/steps-of-a-cv-project/"
+            >Understanding the Key Steps in a Computer Vision Project -
+            Ultralytics YOLO Docs
+          </a>
+        </li>
+      </ol>
     </div>
-  </nav>
 
-  <div class="container-lg">
-
-
-
-<h1 id="computer-vision-for-self-driving-motorcycles">Computer Vision for Self-Driving Motorcycles</h1>
-<p class="lead"> by Harshit Aggrawal, Summer Intern SMLab</p>
-<br><br>
-
-<p>Computer vision (herein refered as cv) plays a crucial role in enabling self-driving abilities in motor vehicles. In this blog, we will explore how cv works and why it is essential in the development of self-driving motorcycles and autonomous driving (herein referred to as AD)</p>
-<p>The topics we&#39;ll cover are:<br>I. The idea and components behind cv<br>II. The integration of feature extraction, data association and photogrammetry in Motor Vehicles<br>III. The challenges faced in CV for autonomous driving</p>
-<h2 id="what-is-computer-vision">What is Computer Vision</h2>
-<p>Before understanding CV, lets first understand Vision. What does it mean to have vision ? To have vision is the ability to acquire, process, analyse and understand things in the electromagnetic spectrum.</p>
-<p>Thus we could say that CV can be extended from this definition to be vision for digital images. <a href="#ref1">$^{1}$</a></p>
-<p>In CV our goal becomes to extract high-level features corresponding understanding from digital images. We do this by multiple steps starting from extracting very low level features, to processing these low level features in-order to filter unnecessary features that end up increasing computational power. We then associate these low lovel features to form a more complete understanding of the images.</p>
-<p>The understanding of images can generally be for the following three tasks: <a href="#ref2">$^{2}$</a></p>
-<ol>
-<li><strong>Segmentation:</strong> The task of being able to classify a particular set of pixels into an object.</li>
-<li><strong>Classification:</strong> The task of detecting what sort of objects are in an image as a whole.</li>
-<li><strong>Detection:</strong> The task of localizing an object in an image.</li>
-</ol>
-<div class="container-md g-5">
-<p><a href="#ref3"><img src="cv_figure1.png" title="Image describes the difference between classification, detection and segmentation" alt="image describing the differences in classification, detection and segmentation" /></a></p></div>
-<h2 id="brief-introduction-to-autonomous-driving">Brief introduction to Autonomous Driving</h2>
-<p>The problem of AD is essentially the ability to predict a robot or in this case, self driving motorcycle&#39;s trajectory with the digital images, and other sensor data acquired and analysed.</p>
-<p>CV comes into play in AD in all of the steps involving processing of the images post acquisition through the LiDAR, RGBD and other camera sensors.</p>
-<p>For reading more about how AD Works and the use of Predictions, refer to <a href="/blog/prediction.md">this link</a></p>
-<h2 id="feature-extractions">Feature Extractions</h2>
-<p>Feature extraction is a crucial step in computer vision that involves identifying and describing distinctive patterns or keypoints in an image. These features serve as the basis for further analysis and understanding of the image content.</p>
-<p>In the context of autonomous driving (AD), feature extraction plays a vital role in processing the images captured by sensors such as LiDAR, RGBD, and cameras. By extracting relevant features from these images, AD systems can detect and recognize objects, localize them in the environment, and make predictions about their trajectories.</p>
-<!-- There are several popular algorithms for feature extraction in computer vision. One such algorithm is SIFT (Scale-Invariant Feature Transform), which detects and describes keypoints that are invariant to scale, rotation, and affine transformations. Another algorithm is BRISK (Binary Robust Invariant Scalable Keypoints), which uses a binary descriptor to represent keypoints and is designed for real-time applications. SURF (Speeded-Up Robust Features) and ORB (Oriented FAST and Rotated BRIEF) are other feature extraction algorithms commonly used in computer vision tasks. -->
-<p>By leveraging the following methods of feature extractions, AD systems can make sense of the environment, identify objects of interest, and make informed decisions based on the analyzed data:</p>
-<h3 id="keypoints-and-descriptors">Keypoints and Descriptors</h3>
-<h4 id="-sift-"><strong>SIFT</strong></h4>
-<p>SIFT (Scale-Invariant Feature Transform) is a popular algorithm used for feature extraction in computer vision. It detects and describes keypoints in an image that are invariant to scale, rotation, and affine transformations. SIFT features are robust and can be used for various tasks such as image matching, object recognition, and image stitching.</p>
-<h4 id="-brisk-"><strong>BRISK</strong></h4>
-<p>BRISK (Binary Robust Invariant Scalable Keypoints) is another feature extraction algorithm that is designed to be fast and efficient. It uses a binary descriptor to represent keypoints, making it suitable for real-time applications. BRISK features are robust to changes in lighting conditions and can handle large scale and rotation variations.</p>
-<h4 id="-surf-"><strong>SURF</strong></h4>
-<p>SURF (Speeded-Up Robust Features) is a feature extraction algorithm that is similar to SIFT but is faster and more efficient. It uses a combination of scale-space extrema and Haar wavelet responses to detect keypoints. SURF features are robust to changes in scale, rotation, and affine transformations, making them suitable for various computer vision tasks.</p>
-<h4 id="-orb-"><strong>ORB</strong></h4>
-<p>ORB (Oriented FAST and Rotated BRIEF) is a feature extraction algorithm that combines the speed of FAST (Features from Accelerated Segment Test) and the robustness of BRIEF (Binary Robust Independent Elementary Features). It detects keypoints using the FAST algorithm and computes a binary descriptor using the BRIEF algorithm. ORB features are fast to compute and can be used for real-time applications.</p>
-<p>These different extracted features can now be used in order to make sense of the high level understanding.</p>
-<h2 id="data-associations">Data Associations</h2>
-<p>Data associations in computer vision refer to the process of linking or associating data from different sources or frames to establish correspondences or relationships between them. In the context of autonomous driving, data associations play a crucial role in understanding the environment and making informed decisions.</p>
-<p>One common application of data associations in autonomous driving is object tracking. By associating data from consecutive frames, such as bounding boxes or keypoints, the system can track the movement of objects over time. This information is essential for predicting object trajectories and ensuring the safety of the vehicle.</p>
-<p>Another use case of data associations is in multi-sensor fusion. Autonomous vehicles often rely on multiple sensors, such as cameras, LiDAR, and radar, to perceive the environment. By associating data from these different sensors, the system can create a more comprehensive and accurate representation of the surroundings. This fusion of data enables better object detection, localization, and scene understanding.</p>
-<p>Data associations can be challenging due to various factors, including occlusions, sensor noise, and object appearance changes. Robust algorithms and techniques, such as Kalman filters, particle filters, and graph-based methods, are commonly used to handle these challenges and establish reliable associations.</p>
-<p>In summary, data associations are a fundamental aspect of computer vision in autonomous driving. They enable the system to track objects, fuse data from multiple sensors, and make informed decisions based on the analyzed information.</p>
-<h2 id="photogrammetry">Photogrammetry</h2>
-<h2 id="photogrammetry">Photogrammetry</h2>
-<p>Photogrammetry is the science and technology of extracting geometric information from photographs or digital images. It involves capturing multiple images of an object or a scene from different angles and using these images to reconstruct the 3D structure and measurements of the subject.</p>
-<p>The process of photogrammetry typically involves the following steps:</p>
-<ol>
-<li><p><strong>Image Acquisition</strong>: Multiple images of the object or scene are captured using cameras or other imaging devices. These images should cover the subject from different viewpoints and angles.</p>
-</li>
-<li><p><strong>Camera Calibration</strong>: The intrinsic and extrinsic parameters of the camera(s) used for image acquisition need to be calibrated. This involves determining the camera&#39;s focal length, principal point, lens distortion, and the relationship between the camera coordinate system and the world coordinate system.</p>
-</li>
-<li><p><strong>Feature Extraction</strong>: Keypoints or distinctive features are extracted from the images. These features can be points, edges, corners, or other visual patterns that can be reliably detected and matched across multiple images.</p>
-</li>
-<li><p><strong>Feature Matching</strong>: The extracted features from different images are matched to establish correspondences. This is done by comparing the descriptors or characteristics of the features and finding the best matches based on similarity measures.</p>
-</li>
-<li><p><strong>Triangulation</strong>: Using the matched features, the 3D positions of the corresponding points in the scene are estimated. This is done by triangulating the rays of light that pass through the camera centers and intersect with the matched features.</p>
-</li>
-<li><p><strong>Bundle Adjustment</strong>: The estimated 3D positions of the points and the camera parameters are refined to minimize the reprojection errors. This optimization step ensures that the reconstructed 3D structure is consistent across all images and accurately represents the real-world scene.</p>
-</li>
-<li><p><strong>Surface Reconstruction</strong>: The reconstructed 3D points are used to create a surface or mesh representation of the object or scene. This can be done using techniques such as Delaunay triangulation or voxel-based methods.</p>
-</li>
-<li><p><strong>Texture Mapping</strong>: The captured images are projected onto the reconstructed surface to create a realistic textured 3D model. This step enhances the visual appearance of the reconstructed object or scene.</p>
-</li>
-</ol>
-<p>Photogrammetry pipelines can vary depending on the specific application and the available resources. Some pipelines may involve additional steps such as image preprocessing, image rectification, or dense point cloud generation. The mathematical principles underlying photogrammetry include concepts from geometry, linear algebra, optimization, and computer vision.</p>
-<p>Overall, photogrammetry is a powerful technique that enables the creation of accurate 3D models from 2D images. It finds applications in various fields such as architecture, archaeology, virtual reality, and industrial metrology.</p>
-<p>Note: We have covered Simultaneous Localisation and Mapping (SLAM) in our <a href="/blog/prediction.md">prediction</a> blog.</p>
-<h2 id="challenges-faced">Challenges faced</h2>
-<h3 id="handling-varied-lighting-conditions">Handling Varied Lighting Conditions</h3>
-<p>One of the challenges in computer vision is handling varied lighting conditions. Different lighting conditions can affect the appearance of objects in an image, making it difficult to accurately detect and classify them. To address this challenge, computer vision algorithms need to be robust to changes in lighting and capable of adapting to different lighting conditions.</p>
-<h3 id="object-detection-and-classification">Object Detection and Classification</h3>
-<p>Another challenge in computer vision is object detection and classification. This involves accurately identifying and categorizing objects in an image. Object detection algorithms need to be able to locate objects of interest and classify them correctly. This task becomes more challenging when dealing with complex scenes, occlusions, and variations in object appearance.</p>
-<h3 id="real-time-processing">Real-Time Processing</h3>
-<p>Real-time processing is a significant challenge in computer vision. Many applications, such as autonomous driving and surveillance systems, require real-time analysis of video streams. This means that computer vision algorithms need to be efficient and capable of processing large amounts of data in real-time. Optimizations, such as parallel processing and hardware acceleration, are often employed to achieve real-time performance.</p>
-<h3 id="robustness-to-environmental-factors">Robustness to Environmental Factors</h3>
-<p>Computer vision algorithms need to be robust to environmental factors, such as noise, clutter, and variations in camera viewpoints. These factors can introduce uncertainties and make it challenging to accurately analyze and interpret visual data. Robustness to environmental factors involves developing algorithms that can handle these uncertainties and produce reliable results in various real-world scenarios.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>In conclusion, feature extraction methods such as SIFT, BRISK, SURF, and ORB play a crucial role in computer vision systems. They enable the system to detect and describe keypoints in images, making them robust to scale, rotation, and affine transformations. These extracted features can be used for various tasks such as image matching, object recognition, and image stitching.</p>
-<p>Data associations are essential in autonomous driving systems as they establish correspondences between data from different sources or frames. They enable object tracking, multi-sensor fusion, and better understanding of the environment.</p>
-<p>Photogrammetry is a powerful technique for extracting geometric information from photographs or digital images. It involves capturing multiple images, calibrating cameras, extracting features, matching them, triangulating 3D positions, refining parameters, reconstructing surfaces, and mapping textures. Photogrammetry finds applications in architecture, archaeology, virtual reality, and industrial metrology.</p>
-<p>Computer vision faces challenges such as handling varied lighting conditions, object detection and classification, real-time processing, and robustness to environmental factors. Overcoming these challenges requires robust algorithms that can adapt to different lighting conditions, accurately detect and classify objects, process data in real-time, and handle uncertainties in various scenarios.</p>
-<p>In conclusion, computer vision is a rapidly evolving field with numerous applications and challenges. By leveraging feature extraction methods, data associations, and photogrammetry techniques, we can make significant advancements in various domains.</p>
-<h2 id="resources">Resources</h2>
-<h2 id="references">References</h2>
-<ol>
-
-<li id="ref1"> <a href="https://en.wikipedia.org/wiki/Computer_vision">Computer Vision - Wikipedia </a></li><br><li id="ref2"> <a href="https://blogs.nvidia.com/blog/what-is-computer-vision/">What is Computer Vision - NVIDIA </a></li><br><li id="ref3"> <a href="https://docs.ultralytics.com/guides/steps-of-a-cv-project/">Understanding the Key Steps in a Computer Vision Project
- - Ultralytics YOLO Docs </a></li><br></ol>
-
-</div>
-
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
- <script>
-   const tooltips = document.querySelectorAll('.tt')
-   tooltips.forEach(t => {
-     new bootstrap.Tooltip(t)
-   })
- </script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltips = document.querySelectorAll(".tt");
+      tooltips.forEach((t) => {
+        new bootstrap.Tooltip(t);
+      });
+    </script>
+  </body>
 </html>

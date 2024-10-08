@@ -1,109 +1,358 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swayansaasita</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+      };
+    </script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      section {
+        padding: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
+      <div class="container-xxl">
+        <!-- navbar brand / title -->
+        <a class="navbar-brand" href="#intro">
+          <span class="text-secondary fw-bold">
+            <i class="bi bi-robot"></i>
+            Swayansaasita
+          </span>
+        </a>
+        <!-- toggle button for mobile nav -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swayansaasita</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <style>
-    section{
-      padding: 60px 0;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- navbar -->
-  <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
-    <div class="container-xxl">
-      <!-- navbar brand / title -->
-      <a class="navbar-brand" href="#intro">
-        <span class="text-secondary fw-bold">
-          <i class="bi bi-robot"></i>
-          Swayansaasita
-        </span>
-      </a>
-      <!-- toggle button for mobile nav -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- navbar links -->
-      <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html#objectives">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html#blogs">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html#contact">Contact Us</a>
-          </li>
-          <li class="nav-item d-md-none">
-            <a class="nav-link" href="#dataset">Downlaod Dataset</a>
-          </li>
-          <li class="nav-item ms-2 d-none d-md-inline">
-            <a class="btn btn-secondary" href="/index.html#datasetdownload">Dataset</a>
-          </li>
-          
-        </ul>
+        <!-- navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-end align-center"
+          id="main-nav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#objectives">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#contact">Contact Us</a>
+            </li>
+            <li class="nav-item d-md-none">
+              <a class="nav-link" href="#dataset">Download Dataset</a>
+            </li>
+            <li class="nav-item ms-2 d-none d-md-inline">
+              <a class="btn btn-secondary" href="/index.html#datasetdownload"
+                >Dataset</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+    <div class="container-lg">
+      <h1 id="prediction-in-self-driving-vehicles">
+        Prediction in Self-Driving Vehicles
+      </h1>
+      <p class="lead">by Harshit Agarwal, Summer Intern SMLab</p>
+      <br /><br />
+
+      <p>
+        For any vehicle to perform autonomous driving, it&#39;s primary task is
+        to be able to predict a path and map of the surrounding given it&#39;s
+        current control and observations.
+      </p>
+      <p>
+        Today, we&#39;ll be discussing the process of motion prediction in
+        autonomous vehicles.
+      </p>
+      <p>The topics covered in this article will be:</p>
+      <ol>
+        <li>
+          <a href="#what-is-autonomy-and-autonomous-driving"
+            >What is Autonomy and autonomous driving ?</a
+          >
+        </li>
+        <a href="#introduction-to-mapping-and-path-prediction"><li>Introduction to Mapping and Path Prediction</li></a>
+        <a href="#problem-of-sensor-fusion"><li>Problem of Sensor Fusion</li></a>
+        <li>Use of Bayesian Recursion and Kalman Filters</li>
+        <li>Pose Graph Estimation</li>
+        <li>Use of Machine Learning and Deep Learning in path prediction</li>
+        <li>
+          Major Challenges faced during path detection like:
+          <ul>
+            <li>Moving Objects (Dynamics)</li>
+            <li>Lower feature pool</li>
+          </ul>
+        </li>
+      </ol>
+      <h2 id="what-is-autonomy-and-autonomous-driving">
+        What is Autonomy and autonomous driving ?
+      </h2>
+      <p>
+        Autonomy refers to the ability of a vehicle to operate and make
+        decisions without human intervention. Autonomous driving, also known as
+        self-driving or driverless driving, is the concept of vehicles being
+        able to navigate and drive themselves without the need for a human
+        driver.
+      </p>
+      <h2 id="introduction-to-mapping-and-path-prediction">
+        Introduction to Mapping and Path Prediction
+      </h2>
+      <p>
+        Mapping and path prediction are crucial components of autonomous driving
+        systems. Mapping involves creating a detailed representation of the
+        surrounding environment, including roads, obstacles, and landmarks. Path
+        prediction, on the other hand, focuses on estimating the future
+        trajectory of the vehicle based on its current state and observations.
+      </p>
+      <h3>Mathematical Definition of the SLAM Problem</h3>
+      <p>
+        Given: <br />
+        \(x_{0:t}\) - The path of the robot from time 0 to t <br />
+        \(m\) - The map of the environment <br />
+        \(z_{1:t}\) - The observations up to time t <br />
+        \(u_{1:t}\) - The control inputs up to time t <br />
+        Required: <br />
+        \(p(x_{0:t}, m | z_{1:t}, u_{1:t})\) - The posterior over the path and
+        map given the observations and control inputs
+      </p>
+
+      <h2 id="problem-of-sensor-fusion">Problem of Sensor Fusion</h2>
+      <p>
+        Sensor fusion is the process of combining data from multiple sensors to
+        obtain a more accurate and comprehensive understanding of the
+        environment. In autonomous driving, sensor fusion plays a critical role
+        in integrating information from various sensors such as cameras, lidar,
+        radar, and GPS to create a reliable perception of the surroundings.
+      </p>
+
+      <h2 id="use-of-bayesian-recursion-and-kalman-filters">
+        Use of Bayesian Recursion and Kalman Filters
+      </h2>
+      <p>
+        The problem of State Estimation is to estimate the state $x$ of a system
+        given observation $z$ and controls $u$. <br />
+        To Find: $p(x_t | z_{1:t}, u_{1:t})$ <br />
+      </p>
+      <h3>Bayes Filter</h3>
+      <p>
+        The Bayes Filters or Recursive Bayes Filter works with two steps. The
+        prediction and correction steps.<br />
+        $\overline{bel(x_{t})} = (p(x_t | z_{1:t-1}, u_{1:t}))$ <br />
+        They can be mathematically defined as - <br />
+        Prediction Step: <br />
+        $\overline{bel(x_{t})} = \int p(x_t | x_{t-1}, u_t) bel(x_{t-1})
+        dx_{t-1}$ <br />
+
+        Correction Step: <br />
+        $bel(x_{t})= \eta p(z_t | x_t) \overline{bel(x_{t})}$
+      </p>
+      <h3>Kalman Filter</h3>
+      The problem of Bayesian Recursion can now be solved in various ways.
+      Mainly by Kalman Filters or Particle Filters. Models can linear and
+      non-linear. And Distributions can be Gaussian or otherwise. Kalman Filters
+      are estimators for the linear Gaussian case, however later we extend it
+      for non-linear cases as well. <br />
+
+      A Gaussian Distribution is represented as: $p(x) = \det(2\pi
+      \Sigma)^{-1/2} \exp(-\frac{1}{2}(x-\mu)^T \Sigma^{-1} (x-\mu))$ <br />
+
+      The Linear Model can be represented as: <br />
+      $x_t = A_t x_{t-1} + B_t u_t + \epsilon_t$ <br />
+      $z_t = C_t x_t + \delta_t$ <br />
+      Where $\epsilon_t$ and $\delta_t$ are the noise terms. <br />
+
+      The motion under Gaussian Noise can be represented as: <br />
+      $p(x_t | x_{t-1}, u_t) =\det(2\pi R_{t})^{-1/2}
+      \exp(-\frac{1}{2}(x_{t}-A_{t}x_{t-1}-B_{t}u_{t})^T R_{t}^{-1}
+      (x_{t}-A_{t}x_{t-1}-B_{t}u_{t})) $ <br />
+
+      The observation model under Gaussian Noise can be represented as: <br />
+      $p(x_t | x_{t-1}, u_t) =\det(2\pi Q_{t})^{-1/2}
+      \exp(-\frac{1}{2}(z_{t}-C_{t}x_{t})^T Q_{t}^{-1} (z_{t}-C_{t}x_{t})) $
+      <br />
+
+      Thus, the Kalman Filter algorithm becomes the following as shown in the
+      figure below.
+
+      <div class="col-12 col-lg-6">
+        <img
+          src="../assets/kalman.png"
+          class="img-fluid"
+          alt="ebook"
+          title="Kalman Filter Algorithm"
+        />
+      </div>
+
+      <h2 id="pose-graph-estimation">Pose Graph Estimation</h2>
+      <p>
+        Pose graph estimation is a technique used in simultaneous localization
+        and mapping (SLAM) to estimate the trajectory of a robot and the map of
+        the environment. It involves representing the robot's poses and the
+        constraints between them as a graph, where nodes correspond to poses and
+        edges represent the constraints. By optimizing the graph structure, the
+        robot can refine its trajectory and map, improving its localization and
+        mapping accuracy.
+      </p>
+      <p>
+        <b>Nodes</b> can represent: 
+        <ul>
+          <li>Robot poses</li>
+          <li>Landmark locations</li>
+        </ul><br/>
+        <b>Edges</b> can represent:
+        <ul>
+          <li>Landmark observations</li>
+          <li>Odometry measurements</li>
+        </ul>
+      </p>
+
+      Data associations are done and the graph is optimized using optimization algorithms like Gauss-Newton, Levenberg-Marquardt, etc. <br>
+      <!-- The Nodes and Edges are represented as: <br>
+      $x = [x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}]$ <br>
+      $e = [e_1, e_2, e_3, e_4, e_5, e_6, e_7, e_8, e_9, e_{10}]$ <br>
+      The optimization problem can be represented as: <br>
+      $x^* = \arg \min_x \sum_{i=1}^{10} e_i^T \Omega_i e_i$ <br>
+      Where $\Omega_i$ is the information matrix. <br> -->
+
+
+      <h3>Loop Closures</h3>
+      Loop Closures are the constraints between non-sequential nodes. They are used to correct the drift in the trajectory. <br>
+
+      <hr>
+      Here's an example of a pose-graph-optimization: <br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/d9ItdnJFOhU?si=jLh4_VqldxOQJDmE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <hr>
+      <h2 id="use-of-machine-learning-and-deep-learning-in-path-prediction">
+        Use of Machine Learning and Deep Learning in path prediction
+      </h2>
+      <p>
+        Machine learning and deep learning algorithms have revolutionized path
+        prediction in autonomous driving. By training models on large datasets,
+        these techniques enable vehicles to learn patterns and make accurate
+        predictions about future paths, taking into account various factors such
+        as road conditions, traffic, and pedestrian behavior.
+      </p>
+      <p>
+        Some popular machine learning and deep learning models used in path
+        prediction include recurrent neural networks (RNNs), long short-term
+        memory (LSTM) networks, and convolutional neural networks (CNNs).
+        </p>
+
+      <p>
+        Methods like Iterative Closest Point and Fast Global Registration are often used traditionally to align the point clouds and estimate the path. <br>
+        In Iterative Closest Point, the algorithm uses two general steps to find the transformations between two frames. First, correspondences between the frames are
+        found. These correspondences are found by selecting the closest points as corresponding, hence the name. Next, the best transformation, T, matching these sets
+        of points is found by minimizing an objective function. <br>
+        Mathematically, It's represented as: $E(T) = \sum_{\{x,y\}\in K}  ||x-Ty||^{2}$ with (x, y) ∈ K denoting sets of points (x, y) from the correspondence set K.
+      </p>
+
+      <p>
+        Methods like Registration Loss Learning, are used to learn the registration loss function. The registration loss function is used to measure the quality of the registration between two point clouds. By learning this function, the model can optimize the registration process and improve the accuracy of the path prediction.
+        Another common SLAM algorithm based on Machine Learning is DeepSLAM. It uses RCNN, VGGNet and LSTM to make a Tracking and Mapping Net. Using these nets and various loss functions like Spatial (Photometric and Pose Loss) and Temporal Image (3d Geometric Loss) losses, it creates Error Maps and retrains the model.
+      </p>
+      
+      <h2 id="major-challenges-faced-during-path-detection-like-">
+        Major Challenges faced during path detection like:
+      </h2>
+      <h3 id="moving-objects-dynamics-">Moving Objects (Dynamics)</h3>
+      <p>
+        Detecting and predicting the behavior of moving objects, such as other
+        vehicles, pedestrians, and cyclists, is a significant challenge in path
+        detection. The autonomous system needs to accurately track and
+        anticipate the movements of these dynamic objects to ensure safe and
+        efficient navigation.
+      </p>
+      <h3 id="lower-feature-pool">Lower feature pool</h3>
+      <p>
+        In certain scenarios, such as poorly lit environments or adverse weather
+        conditions, the availability of reliable features for path detection may
+        be limited. This poses a challenge for autonomous driving systems, as
+        they need to rely on alternative methods or sensor modalities to
+        accurately perceive the environment and predict the path.
+      </p>
+      <h2 id="resources">Resources</h2>
+      <ol>
+        <li>
+          <a href="https://smlab.niser.ac.in/labtalks/talks/orb-slam3/"
+            >For a brief presentation on one of the state-of-the-art SLAM
+            methods, check out SMLAB LAB TALKS - ORB-SLAM 3</a
+          >
+        </li>
+        <li><a href="https://www.youtube.com/watch?v=-XU54IsG8Vo">A cool little explanation by Computerphile on SLAM and robot mapping</a></li>
+      </ol>
+      <h2 id="references">References</h2>
+      <ol>
+        <li>
+          <a
+            href="http://ais.informatik.uni-freiburg.de/teaching/ws13/mapping/index_en.php"
+            >Robot Mapping - WS 2013/14 ~ Cyrill Stachniss</a
+          >
+        </li>
+        <li>
+          <a href="http://www2.informatik.uni-freiburg.de/~stachnis/pdf/grisetti10titsmag.pdf"
+            >Grisetti, G., Stachniss, C., & Burgard, W. (2010). Improved
+            Techniques for Grid Mapping With Rao-Blackwellized Particle Filters.
+            IEEE Transactions on Robotics, 23(1), 34-46.</a>
+        </li>
+        <li>
+          <a href="https://www.diva-portal.org/smash/get/diva2:1612438/FULLTEXT01.pdf">
+            A Survey on SLAM Techniques for Autonomous Vehicles - Amanpreet
+            Kaur</a
+          </a>
+        </li>
+      </ol>
     </div>
-  </nav>
 
-  <div class="container-lg">
-<h1 id="prediction-in-self-driving-vehicles">Prediction in Self-Driving Vehicles</h1>
-<p class="lead"> by Harshit Aggrawal, Summer Intern SMLab</p>
-<br><br>
-
-<p>For any vehicle to perform autonomous driving, it&#39;s primary task is to be able to predict a path and map of the surrounding given it&#39;s current control and observations.</p>
-<p>Today, we&#39;ll be discussing the process of motion prediction in autonomous vehicles.</p>
-<p>The topics covered in this article will be:</p>
-<ol>
-<li>What is Autonomy and autonomous driving ?</li>
-<li>Introduction to Mapping and Path Prediction</li>
-<li>Problem of Sensor Fusion</li>
-<li>Use of Bayesian Recursion and Kalman Filters</li>
-<li>Use of Machine Learning and Deep Learning in path prediction</li>
-<li>Major Challenges faced during path detection like:<ul>
-<li>Moving Objects (Dynamics)</li>
-<li>Lower feature pool</li>
-</ul>
-</li>
-</ol>
-<h2 id="what-is-autonomy-and-autonomous-driving-">What is Autonomy and autonomous driving ?</h2>
-<p>Autonomy refers to the ability of a vehicle to operate and make decisions without human intervention. Autonomous driving, also known as self-driving or driverless driving, is the concept of vehicles being able to navigate and drive themselves without the need for a human driver.</p>
-<h2 id="introduction-to-mapping-and-path-prediction">Introduction to Mapping and Path Prediction</h2>
-<p>Mapping and path prediction are crucial components of autonomous driving systems. Mapping involves creating a detailed representation of the surrounding environment, including roads, obstacles, and landmarks. Path prediction, on the other hand, focuses on estimating the future trajectory of the vehicle based on its current state and observations.</p>
-<h2 id="problem-of-sensor-fusion">Problem of Sensor Fusion</h2>
-<p>Sensor fusion is the process of combining data from multiple sensors to obtain a more accurate and comprehensive understanding of the environment. In autonomous driving, sensor fusion plays a critical role in integrating information from various sensors such as cameras, lidar, radar, and GPS to create a reliable perception of the surroundings.</p>
-<h2 id="use-of-bayesian-recursion-and-kalman-filters">Use of Bayesian Recursion and Kalman Filters</h2>
-<p>Bayesian recursion and Kalman filters are mathematical techniques used in autonomous driving for state estimation and prediction. These methods allow the vehicle to continuously update its belief about its own state and the state of the surrounding environment based on sensor measurements and prior knowledge.</p>
-<h2 id="use-of-machine-learning-and-deep-learning-in-path-prediction">Use of Machine Learning and Deep Learning in path prediction</h2>
-<p>Machine learning and deep learning algorithms have revolutionized path prediction in autonomous driving. By training models on large datasets, these techniques enable vehicles to learn patterns and make accurate predictions about future paths, taking into account various factors such as road conditions, traffic, and pedestrian behavior.</p>
-<h2 id="major-challenges-faced-during-path-detection-like-">Major Challenges faced during path detection like:</h2>
-<h3 id="moving-objects-dynamics-">Moving Objects (Dynamics)</h3>
-<p>Detecting and predicting the behavior of moving objects, such as other vehicles, pedestrians, and cyclists, is a significant challenge in path detection. The autonomous system needs to accurately track and anticipate the movements of these dynamic objects to ensure safe and efficient navigation.</p>
-<h3 id="lower-feature-pool">Lower feature pool</h3>
-<p>In certain scenarios, such as poorly lit environments or adverse weather conditions, the availability of reliable features for path detection may be limited. This poses a challenge for autonomous driving systems, as they need to rely on alternative methods or sensor modalities to accurately perceive the environment and predict the path.</p>
-<h2 id="resources">Resources</h2>
-<h2 id="references">References</h2>
-<h2 id="resources">Resources</h2>
-<h2 id="references">References</h2>
-
-
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-<script>
-  const tooltips = document.querySelectorAll('.tt')
-  tooltips.forEach(t => {
-    new bootstrap.Tooltip(t)
-  })
-</script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltips = document.querySelectorAll(".tt");
+      tooltips.forEach((t) => {
+        new bootstrap.Tooltip(t);
+      });
+    </script>
+  </body>
 </html>

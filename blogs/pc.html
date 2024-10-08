@@ -1,0 +1,188 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swayansaasita</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+        },
+      };
+    </script>
+    <script
+      type="text/javascript"
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <style>
+      section {
+        padding: 60px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md navbar-light pt-5 pb-4">
+      <div class="container-xxl">
+        <!-- navbar brand / title -->
+        <a class="navbar-brand" href="#intro">
+          <span class="text-secondary fw-bold">
+            <i class="bi bi-robot"></i>
+            Swayansaasita
+          </span>
+        </a>
+        <!-- toggle button for mobile nav -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- navbar links -->
+        <div
+          class="collapse navbar-collapse justify-content-end align-center"
+          id="main-nav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#objectives">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#blogs">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html#contact">Contact Us</a>
+            </li>
+            <li class="nav-item d-md-none">
+              <a class="nav-link" href="#dataset">Download Dataset</a>
+            </li>
+            <li class="nav-item ms-2 d-none d-md-inline">
+              <a class="btn btn-secondary" href="/index.html#datasetdownload"
+                >Dataset</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-lg">
+      <h1 id="prediction-in-self-driving-vehicles">Pointclouds</h1>
+      <p class="lead">by Harshit Agarwal, Summer Intern SMLab</p>
+      <br></br>
+      <p>Pointclouds</p>
+      <p>
+        Today, we&#39;ll be discussing pointclouds, the standard pointcloud
+        library and the uses of pointclouds.
+      </p>
+      <p>The topics covered in this article will be:</p>
+      <ol>
+        <li> <a href="#introduction-to-pointclouds">Introduction to PointClouds</a></li>
+        <li>What is PCL?</li>
+        <li>Structure of PointCloud Data</li>
+        <li>Processing of Pointclouds for:</li>
+        <ul>
+          <li>Denoising</li>
+          <li>Visualisation</li>
+          <li>Downsampling</li>
+        </ul>
+        <li>ICP</li>
+        <li>Uses of Pointclouds</li>
+      </ol>
+
+
+
+
+      <h2 id="introduction-to-pointclouds">Introduction to PointClouds</h2>
+      <p>Pointclouds are a collection of data points defined by a given coordinate system...</p>
+
+      <h2 id="what-is-pcl">What is PCL?</h2>
+      <p>The Point Cloud Library (PCL) is a standalone, large scale, open project for 2D/3D image and point cloud processing...</p>
+
+      <h2 id="structure-of-pointcloud-data">Structure of PointCloud Data</h2>
+      <p>PointCloud data is typically structured in a way that each point contains information about its position in space...</p>
+
+      <h2 id="processing-of-pointclouds">Processing of Pointclouds for:</h2>
+      <h3 id="denoising">Denoising</h3>
+      <p>Denoising is the process of removing noise from the pointcloud data...</p>
+
+      <h3 id="visualisation">Visualisation</h3>
+      <p>Visualisation involves rendering the pointcloud data in a way that it can be easily interpreted...</p>
+
+      <h3 id="downsampling">Downsampling</h3>
+      <p>Downsampling is the process of reducing the number of points in the pointcloud data...</p>
+
+      <h2 id="icp">ICP</h2>
+      <p>Iterative Closest Point (ICP) is an algorithm employed to minimize the difference between two clouds of points...</p>
+
+      <h2 id="uses-of-pointclouds">Uses of Pointclouds</h2>
+      <p>Pointclouds have a wide range of applications including in robotics, autonomous driving, and 3D modeling...</p>
+
+      <h2>Conclusion</h2>
+
+      <h2 id="resources">Resources</h2>
+      <ol>
+        <li>
+          <a href="https://www.youtube.com/watch?v=dhzLQfDBx2Q"
+            >ICP & Point Cloud Registration - Part 1: Known Data Association &
+            SVD (Cyrill Stachniss, 2021)
+          </a>
+        </li>
+        <li>dsd</li>
+      </ol>
+      <h2 id="references">References</h2>
+      <ol>
+        <li>
+          <a
+            href="https://www.diag.uniroma1.it/~nardi/Didattica/LabAI/matdid/pcl_intro.pdf"
+            >Introduction to PointClouds</a
+          >
+        </li>
+        <li>
+          <a href="https://pointclouds.org/documentation/">PCL Documentation</a>
+        </li>
+        <li>
+          <a
+            href="https://www.nist.gov/system/files/documents/2019/04/08/16d_point_cloud_management_-_jesse_zahner.pdf#:~:text=Point%20clouds%20are%20the%20millions,formed%20through%20many%20different%20methods."
+          >
+            Point Cloud Management</a
+          >
+        </li>
+      </ol>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltips = document.querySelectorAll(".tt");
+      tooltips.forEach((t) => {
+        new bootstrap.Tooltip(t);
+      });
+    </script>
+  </body>
+</html>
