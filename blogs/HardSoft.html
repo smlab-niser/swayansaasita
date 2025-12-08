@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hardware-Software Integration with MCUs, Development Boards, and FPGAs</title>
+  <meta name="description" content="An in-depth guide to hardware-software integration using microcontrollers, development boards, and FPGAs, covering principles, workflows, and applications across robotics, IoT, automotive, and industry."/>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #222; }
+    header, main, footer { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header h1 { margin: 0 0 8px; }
+    .abstract { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 16px; margin: 16px 0 32px; }
+    h2 { margin-top: 32px; }
+    figure { margin: 24px 0; }
+    figcaption { font-size: 0.9rem; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .callout { background: #fafafa; border-left: 4px solid #007acc; padding: 12px 16px; margin: 16px 0; }
+    .references li { margin-bottom: 8px; }
+    .small { font-size: 0.95rem; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hardware-Software Integration with MCUs, Development Boards, and FPGAs</h1>
+    <p class="small">By Jyothish • Jatani, Odisha • Monday, 08 December 2025</p>
+    <section class="abstract">
+      <strong>Abstract (60 words):</strong>
+      Hardware-software integration bridges embedded systems and applications. This article explains integration using microcontrollers (MCUs), development boards, and FPGAs. It covers workflows, toolchains, and design considerations, compares architectures, and maps applications across robotics, IoT, automotive, and industry. Practical notes highlight debugging, scalability, and reproducibility, with references for engineers seeking robust, real-world deployment.
+    </section>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>
+        Modern embedded systems rely on seamless integration between hardware and software. Microcontrollers, development boards, and FPGAs form the backbone of prototyping and deployment. Engineers combine firmware, drivers, and application logic with hardware interfaces to build reliable systems for robotics, IoT, automotive, and industrial automation.
+      </p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Arduino_Uno_-_R3.jpg" alt="Arduino Uno development board" width="720" />
+        <figcaption>
+          Arduino Uno development board. Source: Wikimedia Commons (CC BY-SA 3.0).
+        </figcaption>
+      </figure>
+      <div class="callout">
+        <strong>Key idea:</strong> Integration requires aligning hardware capabilities with software abstractions, ensuring reproducibility and scalability.
+      </div>
+    </section>
+
+    <section id="mcus">
+      <h2>Microcontrollers (MCUs)</h2>
+      <p>
+        MCUs are compact processors with integrated memory and peripherals. They run firmware written in C/C++ or Rust, controlling sensors, actuators, and communication interfaces. Popular MCUs include ARM Cortex-M, ESP32, and STM32 families.
+      </p>
+      <ul>
+        <li><strong>Strengths:</strong> Low power, cost-effective, widely supported.</li>
+        <li><strong>Limitations:</strong> Limited computational power, constrained memory.</li>
+      </ul>
+    </section>
+
+    <section id="boards">
+      <h2>Development Boards</h2>
+      <p>
+        Development boards like Arduino, Raspberry Pi, and BeagleBone provide accessible platforms for prototyping. They integrate MCUs or SoCs with I/O headers, USB, and debugging interfaces. Boards accelerate development by offering ready-to-use hardware and community libraries.
+      </p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Raspberry_Pi_4_Model_B.jpg" alt="Raspberry Pi 4 development board" width="720" />
+        <figcaption>
+          Raspberry Pi 4 development board. Source: Wikimedia Commons (CC BY-SA 4.0).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="fpgas">
+      <h2>Field-Programmable Gate Arrays (FPGAs)</h2>
+      <p>
+        FPGAs are reconfigurable hardware devices programmed with HDLs (VHDL, Verilog) or high-level synthesis tools. They enable parallel processing, custom accelerators, and deterministic timing. FPGAs complement MCUs in high-performance applications like vision, signal processing, and robotics.
+      </p>
+      <ul>
+        <li><strong>Strengths:</strong> Parallelism, flexibility, deterministic performance.</li>
+        <li><strong>Limitations:</strong> Higher cost, complex toolchains.</li>
+      </ul>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Xilinx_FPGA_board.jpg" alt="Xilinx FPGA development board" width="720" />
+        <figcaption>
+          Xilinx FPGA development board. Source: Wikimedia Commons (CC BY-SA 3.0).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="workflow">
+      <h2>Integration Workflow</h2>
+      <ol>
+        <li><strong>Requirement Analysis:</strong> Define hardware constraints and software goals.</li>
+        <li><strong>Toolchain Setup:</strong> Install compilers, IDEs, and FPGA synthesis tools.</li>
+        <li><strong>Firmware Development:</strong> Write drivers and control logic for MCUs.</li>
+        <li><strong>Hardware Abstraction:</strong> Use APIs and middleware to unify hardware access.</li>
+        <li><strong>Testing & Debugging:</strong> Employ oscilloscopes, logic analyzers, and simulators.</li>
+        <li><strong>Deployment:</strong> Optimize for power, performance, and reproducibility.</li>
+      </ol>
+    </section>
+
+    <section id="applications">
+      <h2>Applications</h2>
+      <div class="grid">
+        <article>
+          <h3>Robotics</h3>
+          <p>
+            MCUs and FPGAs integrate sensors, actuators, and control algorithms for autonomous robots.
+          </p>
+        </article>
+        <article>
+          <h3>IoT</h3>
+          <p>
+            Development boards enable rapid prototyping of connected devices, from smart homes to industrial IoT.
+          </p>
+        </article>
+        <article>
+          <h3>Automotive</h3>
+          <p>
+            FPGAs and MCUs power ADAS, infotainment, and real-time control systems in vehicles.
+          </p>
+        </article>
+        <article>
+          <h3>Healthcare</h3>
+          <p>
+            Embedded systems support medical devices, patient monitoring, and diagnostic equipment.
+          </p>
+        </article>
+        <article>
+          <h3>Industry</h3>
+          <p>
+            Hardware-software integration drives automation, robotics, and digital twins in manufacturing.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="design">
+      <h2>Design Considerations</h2>
+      <ul>
+        <li><strong>Scalability:</strong> Choose hardware that supports future expansion.</li>
+        <li><strong>Debugging:</strong> Ensure visibility with JTAG, UART, and simulation tools.</li>
+        <li><strong>Power Efficiency:</strong> Optimize firmware and hardware for low energy consumption.</li>
+        <li><strong>Reproducibility:</strong> Document workflows and automate builds.</li>
+        <li><strong>Community Support:</strong> Leverage open-source libraries and forums.</li>
+      </ul>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="references">
+        <li><a href="https://www.arm.com/solutions/microcontrollers">ARM: Microcontroller Solutions</a></li>
+        <li><a href="https://www.raspberrypi.com/">Raspberry Pi Official Website</a></li>
+        <li><a href="https://www.xilinx.com/products/silicon-devices/fpga.html">Xilinx FPGA Overview</a></li>
+        <li><a href="https://www.intel.com/content/www/us/en/products/details/fpga.html">Intel FPGA Solutions</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p class="small">

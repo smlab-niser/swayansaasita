@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GNSS and RTK: Principles, Accuracy, and Applications</title>
+  <meta name="description" content="An in-depth guide to GNSS and RTK, covering fundamentals, working principles, error corrections, and applications across surveying, agriculture, robotics, and autonomous navigation."/>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #222; }
+    header, main, footer { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header h1 { margin: 0 0 8px; }
+    .abstract { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 16px; margin: 16px 0 32px; }
+    h2 { margin-top: 32px; }
+    figure { margin: 24px 0; }
+    figcaption { font-size: 0.9rem; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .callout { background: #fafafa; border-left: 4px solid #007acc; padding: 12px 16px; margin: 16px 0; }
+    .references li { margin-bottom: 8px; }
+    .small { font-size: 0.95rem; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GNSS and RTK: Principles, Accuracy, and Applications</h1>
+    <p class="small">By Jyothish • Jatani, Odisha • Monday, 08 December 2025</p>
+    <section class="abstract">
+      <strong>Abstract (60 words):</strong>
+      Global Navigation Satellite Systems (GNSS) provide worldwide positioning, while Real-Time Kinematic (RTK) enhances accuracy to centimeter levels. This article explains GNSS fundamentals, RTK working principles, error corrections, and compares them with DGPS. It maps applications across surveying, agriculture, robotics, UAVs, and autonomous navigation, with design considerations and references for reproducible deployment.
+    </section>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>What is GNSS?</h2>
+      <p>
+        GNSS (Global Navigation Satellite Systems) refers to satellite constellations like GPS (USA), GLONASS (Russia), Galileo (EU), and BeiDou (China) that provide global positioning and timing services. GNSS receivers calculate position by triangulating signals from multiple satellites.
+      </p>
+      <div class="callout">
+        <strong>Key idea:</strong> GNSS provides global positioning, but raw accuracy is limited to meters due to atmospheric and clock errors.
+      </div>
+    </section>
+
+    <section id="rtk">
+      <h2>What is RTK?</h2>
+      <p>
+        Real-Time Kinematic (RTK) is a technique that improves GNSS accuracy to centimeter levels. It uses carrier-phase measurements and corrections from a nearby base station or network. RTK resolves ambiguities in satellite signals, enabling precise positioning for surveying, UAVs, and autonomous vehicles.
+      </p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/RTK_GPS_survey.jpg" alt="Surveyor using GNSS RTK equipment" width="720" />
+        <figcaption>
+          Surveyor using GNSS RTK equipment. Source: Wikimedia Commons (CC BY-SA 3.0).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="working">
+      <h2>Working Principles</h2>
+      <ul>
+        <li><strong>Base Station:</strong> Located at a known position, continuously receives GNSS signals.</li>
+        <li><strong>Rover:</strong> Mobile receiver obtains GNSS signals and correction data from the base.</li>
+        <li><strong>Corrections:</strong> Carrier-phase differences are transmitted via radio, NTRIP, or cellular networks.</li>
+        <li><strong>Accuracy:</strong> RTK achieves 1–2 cm precision in open-sky conditions.</li>
+      </ul>
+      <figure>
+        <img src="https://docs.inertialsense.com/user-manual/gnss/rtk_positioning_overview/" alt="RTK positioning diagram" width="720" />
+        <figcaption>
+          RTK positioning diagram. Source: InertialSense Documentation.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="applications">
+      <h2>Applications</h2>
+      <div class="grid">
+        <article>
+          <h3>Surveying</h3>
+          <p>
+            RTK revolutionizes land and hydrographic surveying, providing centimeter-level accuracy for mapping and construction.
+          </p>
+        </article>
+        <article>
+          <h3>Agriculture</h3>
+          <p>
+            Precision farming uses RTK for automated tractor guidance, planting, and resource optimization.
+          </p>
+        </article>
+        <article>
+          <h3>Autonomous Vehicles</h3>
+          <p>
+            GNSS+RTK supports lane-level navigation for self-driving cars and UAVs, complementing LiDAR and vision sensors.
+          </p>
+        </article>
+        <article>
+          <h3>Robotics</h3>
+          <p>
+            Mobile robots use RTK for outdoor navigation, SLAM integration, and georeferenced mapping.
+          </p>
+        </article>
+        <article>
+          <h3>Marine Navigation</h3>
+          <p>
+            RTK aids in dredging, offshore construction, and hydrographic surveys with high precision.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="design">
+      <h2>Design Considerations</h2>
+      <ul>
+        <li><strong>Baseline Length:</strong> Accuracy decreases with distance between base and rover.</li>
+        <li><strong>Signal Multipath:</strong> Reflections cause errors; mitigation requires antenna placement and filtering.</li>
+        <li><strong>Connectivity:</strong> Reliable communication links (radio, cellular) are essential for real-time corrections.</li>
+        <li><strong>Integration:</strong> Fuse GNSS+RTK with IMU/LiDAR for robust navigation in urban canyons.</li>
+      </ul>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="references">
+        <li><a href="https://link.springer.com/book/10.1007/978-981-96-9116-6">Springer: GNSS Real-Time Kinematic Positioning</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Real-time_kinematic_positioning">Wikipedia: Real-time kinematic positioning</a></li>
+        <li><a href="https://onocoy.com/blog/gnss-rtk-positioning-an-overview">Onocoy: GNSS RTK Positioning Overview</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p class="small">
+      © 2025. This article is intended for educational purposes. For deployment, consult GNSS/RTK equipment datasheets, standards, and perform empirical validation under target conditions.
+    </p>
+  </footer>
+</body>
+</html>

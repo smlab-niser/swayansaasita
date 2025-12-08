@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computer Vision: Principles, Techniques, and Applications</title>
+  <meta name="description" content="An in-depth guide to computer vision, covering core techniques, working principles, and applications across robotics, AR/VR, healthcare, automotive, and industry."/>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #222; }
+    header, main, footer { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header h1 { margin: 0 0 8px; }
+    .abstract { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 16px; margin: 16px 0 32px; }
+    h2 { margin-top: 32px; }
+    figure { margin: 24px 0; }
+    figcaption { font-size: 0.9rem; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .callout { background: #fafafa; border-left: 4px solid #007acc; padding: 12px 16px; margin: 16px 0; }
+    code, kbd { background: #f0f0f0; padding: 2px 6px; border-radius: 4px; }
+    .references li { margin-bottom: 8px; }
+    .small { font-size: 0.95rem; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Computer Vision: Principles, Techniques, and Applications</h1>
+    <p class="small">By Jyothish • Jatani, Odisha • Monday, 08 December 2025</p>
+    <section class="abstract">
+      <strong>Abstract (60 words):</strong>
+      Computer Vision enables machines to interpret and analyze visual data. This article explains fundamental principles, core techniques such as image processing, feature extraction, and deep learning, along with calibration and error sources. It compares computer vision with human vision, and maps applications across robotics, AR/VR, automotive, healthcare, and industry, with practical design notes and references for reproducible deployment.
+    </section>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>What is Computer Vision?</h2>
+      <p>
+        Computer Vision (CV) is a field of artificial intelligence that enables machines to interpret and understand visual information from the world. By processing images and videos, CV systems can identify objects, track motion, reconstruct 3D scenes, and make decisions based on visual input. It combines image processing, machine learning, and pattern recognition.
+      </p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Computer_vision_diagram.png" alt="Computer Vision pipeline diagram" width="720" />
+        <figcaption>
+          Computer Vision pipeline diagram. Image source: Wikimedia Commons (CC BY-SA 4.0).
+          Citation: https://commons.wikimedia.org/wiki/File:Computer_vision_diagram.png
+        </figcaption>
+      </figure>
+      <div class="callout">
+        <strong>Key idea:</strong> Extract meaningful information from visual data to enable automated perception and decision-making.
+      </div>
+    </section>
+
+    <section id="techniques">
+      <h2>Core Techniques in Computer Vision</h2>
+      <div class="grid">
+        <article>
+          <h3>Image Processing</h3>
+          <p>
+            Basic operations such as filtering, edge detection, and segmentation prepare raw images for higher-level analysis. Techniques like Gaussian smoothing and Canny edge detection are foundational.
+          </p>
+        </article>
+        <article>
+          <h3>Feature Extraction</h3>
+          <p>
+            Algorithms like SIFT, SURF, and ORB detect and describe keypoints for matching and recognition. Features enable tasks like object detection and tracking.
+          </p>
+        </article>
+        <article>
+          <h3>Machine Learning</h3>
+          <p>
+            Classical methods (SVM, k-NN) and modern deep learning (CNNs, transformers) classify and detect objects. Neural networks dominate current CV applications.
+          </p>
+        </article>
+        <article>
+          <h3>3D Reconstruction</h3>
+          <p>
+            Techniques like stereovision, structure-from-motion, and multi-view geometry reconstruct 3D scenes from 2D images, enabling robotics and AR/VR.
+          </p>
+        </article>
+        <article>
+          <h3>Object Detection and Recognition</h3>
+          <p>
+            Models like YOLO, Faster R-CNN, and Mask R-CNN detect and classify objects in real time, powering autonomous systems and surveillance.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="working">
+      <h2>Working Principles</h2>
+      <h3>Image Acquisition</h3>
+      <p>
+        Cameras, sensors, or scanners capture visual data. Quality of acquisition impacts downstream processing accuracy.
+      </p>
+
+      <h3>Preprocessing</h3>
+      <p>
+        Noise reduction, normalization, and geometric corrections prepare data for analysis. Calibration ensures accurate mapping between pixels and real-world coordinates.
+      </p>
+
+      <h3>Analysis</h3>
+      <p>
+        Algorithms extract features, detect objects, and interpret scenes. Deep learning models learn hierarchical representations for robust performance.
+      </p>
+
+      <h3>Decision Making</h3>
+      <p>
+        CV systems integrate visual analysis with control logic, enabling autonomous navigation, inspection, or interaction.
+      </p>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Deep_learning_computer_vision.png" alt="Deep learning in computer vision" width="720" />
+        <figcaption>
+          Deep learning in computer vision. Image source: Wikimedia Commons (CC BY-SA 4.0).
+          Citation: https://commons.wikimedia.org/wiki/File:Deep_learning_computer_vision.png
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="applications">
+      <h2>Applications of Computer Vision</h2>
+      <div class="grid">
+        <article>
+          <h3>Robotics</h3>
+          <p>
+            CV enables robots to perceive environments, detect obstacles, and manipulate objects with precision.
+          </p>
+        </article>
+        <article>
+          <h3>AR/VR</h3>
+          <p>
+            CV supports scene reconstruction, gesture recognition, and immersive experiences in augmented and virtual reality.
+          </p>
+        </article>
+        <article>
+          <h3>Automotive</h3>
+          <p>
+            CV powers driver assistance systems, lane detection, pedestrian recognition, and autonomous driving.
+          </p>
+        </article>
+        <article>
+          <h3>Healthcare</h3>
+          <p>
+            CV aids in medical imaging, diagnostics, patient monitoring, and surgical guidance.
+          </p>
+        </article>
+        <article>
+          <h3>Industry</h3>
+          <p>
+            CV supports quality control, defect detection, and automation in manufacturing and logistics.
+          </p>
+        </article>
+      </div>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Computer_vision_applications.jpg" alt="Applications of computer vision" width="720" />
+        <figcaption>
+          Applications of computer vision. Image source: Wikimedia Commons (CC BY-SA 4.0).
+          Citation: https://commons.wikimedia.org/wiki/File:Computer_vision_applications.jpg
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="design">
+      <h2>Design Considerations</h2>
+      <ul>
+        <li><strong>Data Quality:</strong> High-resolution, well-lit images improve accuracy.</li>
+        <li><strong>Algorithm Choice:</strong> Select models based on task complexity and resource constraints.</li>
+        <li><strong>Calibration:</strong> Ensure accurate mapping between pixels and real-world measurements.</li>
+        <li><strong>Performance:</strong> Optimize for latency, throughput, and robustness in deployment environments.</li>
+        <li><strong>Ethics:</strong> Address privacy, bias, and fairness in CV applications.</li>
+      </ul>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="references">
+        <li>
+          <strong>Szeliski, R.</strong> (2022). Computer Vision: Algorithms and Applications. Springer.
+        </li>
+        <li>
+          <strong>Forsyth, D., & Ponce, J.</strong> (2011). Computer Vision: A Modern Approach. Pearson.
+        </li>
+        <li>
+          <strong>Goodfellow, I., Bengio, Y

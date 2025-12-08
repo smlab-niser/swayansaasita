@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robot Operating System (ROS): Principles, Architecture, and Applications</title>
+  <meta name="description" content="An in-depth guide to the Robot Operating System (ROS), covering its architecture, middleware, tools, and applications across robotics, automation, healthcare, and industry."/>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #222; }
+    header, main, footer { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header h1 { margin: 0 0 8px; }
+    .abstract { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 16px; margin: 16px 0 32px; }
+    h2 { margin-top: 32px; }
+    figure { margin: 24px 0; }
+    figcaption { font-size: 0.9rem; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .callout { background: #fafafa; border-left: 4px solid #007acc; padding: 12px 16px; margin: 16px 0; }
+    .references li { margin-bottom: 8px; }
+    .small { font-size: 0.95rem; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Robot Operating System (ROS): Principles, Architecture, and Applications</h1>
+    <p class="small">By Jyothish • Jatani, Odisha • Monday, 08 December 2025</p>
+    <section class="abstract">
+      <strong>Abstract (60 words):</strong>
+      The Robot Operating System (ROS) is an open-source middleware framework that simplifies robotics software development. This article explains ROS architecture, communication models, tools, and ecosystem. It compares ROS 1 and ROS 2, highlights benefits and limitations, and maps applications across robotics, automation, healthcare, automotive, and industry, with practical design notes and references for reproducible deployment.
+    </section>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>What is ROS?</h2>
+      <p>
+        The Robot Operating System (ROS) is not a traditional operating system but a **flexible middleware framework** that provides libraries, tools, and communication structures for building robotic applications. It enables modular design, allowing developers to integrate drivers, algorithms, and hardware interfaces seamlessly.
+      </p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/ROS_logo.png" alt="ROS logo" width="320" />
+        <figcaption>
+          ROS official logo. Image source: Wikimedia Commons (CC BY-SA 4.0).
+          Citation: https://commons.wikimedia.org/wiki/File:ROS_logo.png
+        </figcaption>
+      </figure>
+      <div class="callout">
+        <strong>Key idea:</strong> ROS provides a standardized communication layer and developer tools, enabling rapid prototyping and scalable robotics systems.
+      </div>
+    </section>
+
+    <section id="architecture">
+      <h2>ROS Architecture</h2>
+      <h3>Nodes and Topics</h3>
+      <p>
+        ROS applications are built from **nodes** (independent processes) that communicate via **topics** using a publish-subscribe model. This decouples components and supports distributed systems.
+      </p>
+
+      <h3>Services and Actions</h3>
+      <p>
+        Services provide synchronous request-response communication, while actions support long-running goals with feedback, useful for navigation or manipulation tasks.
+      </p>
+
+      <h3>Middleware</h3>
+      <p>
+        ROS 1 uses custom message passing over TCPROS/UDPROS, while ROS 2 leverages **DDS (Data Distribution Service)** for real-time, secure, and scalable communication.
+      </p>
+
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/ROS_architecture.png" alt="ROS architecture diagram" width="720" />
+        <figcaption>
+          ROS architecture overview. Image source: Wikimedia Commons (CC BY-SA 4.0).
+          Citation: https://commons.wikimedia.org/wiki/File:ROS_architecture.png
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="tools">
+      <h2>Key Tools and Libraries</h2>
+      <ul>
+        <li><strong>RViz:</strong> Visualization tool for sensor data, robot models, and planning results.</li>
+        <li><strong>Gazebo:</strong> Physics-based simulator for testing robots in virtual environments.</li>
+        <li><strong>rosbag:</strong> Data recording and playback utility for debugging and analysis.</li>
+        <li><strong>tf:</strong> Library for tracking coordinate frames over time.</li>
+        <li><strong>MoveIt:</strong> Motion planning framework for robotic arms and manipulators.</li>
+      </ul>
+    </section>
+
+    <section id="ros1vsros2">
+      <h2>ROS 1 vs ROS 2</h2>
+      <p>
+        ROS 1 pioneered modular robotics development but lacked real-time capabilities and security. **ROS 2**, built on DDS, addresses these limitations with improved performance, multi-platform support, and enhanced safety features.
+      </p>
+    </section>
+
+    <section id="applications">
+      <h2>Applications of ROS</h2>
+      <div class="grid">
+        <article>
+          <h3>Robotics Research</h3>
+          <p>
+            ROS accelerates prototyping in academia, enabling reproducible experiments and sharing of open-source packages.
+          </p>
+        </article>
+        <article>
+          <h3>Industrial Automation</h3>
+          <p>
+            ROS supports robotic arms, AGVs, and collaborative robots in manufacturing, logistics, and inspection.
+          </p>
+        </article>
+        <article>
+          <h3>Healthcare</h3>
+          <p>
+            ROS powers surgical robots, rehabilitation devices, and patient monitoring systems.
+          </p>
+        </article>
+        <article>
+          <h3>Automotive</h3>
+          <p>
+            Autonomous vehicles use ROS for sensor fusion, navigation, and control, leveraging its modularity and simulation tools.
+          </p>
+        </article>
+        <article>
+          <h3>Aerospace and Defense</h3>
+          <p>
+            ROS is applied in UAVs, space robotics, and defense systems requiring real-time autonomy.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="design">
+      <h2>Design Considerations</h2>
+      <ul>
+        <li><strong>Real-time constraints:</strong> Use ROS 2 with DDS for deterministic communication.</li>
+        <li><strong>Security:</strong> Enable authentication and encryption in ROS 2 for sensitive applications.</li>
+        <li><strong>Scalability:</strong> Design modular nodes and leverage namespaces for large systems.</li>
+        <li><strong>Simulation:</strong> Validate algorithms in Gazebo before deploying to hardware.</li>
+        <li><strong>Community packages:</strong> Reuse open-source ROS packages to accelerate development.</li>
+      </ul>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="references">
+        <li><a href="https://www.geeksforgeeks.org/artificial-intelligence/robot-operating-system-ros-the-future-of-automation/">GeeksforGeeks: Robot Operating System (ROS): The Future of Automation</a></li>
+        <li><a href="https://www.ros.org/">ROS Official Website</a></li>
+        <li><a href="https://www.spiceworks.com/tech/artificial-intelligence/articles/what-is-robot-operating-system/">Spiceworks: Robot Operating System (ROS): Working, Uses, and Benefits</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p class="small">
+      © 2025. This article is intended for educational purposes. For deployment, consult ROS documentation, community resources, and perform empirical validation under target conditions.
+    </p>
+  </footer>
+</body>
+</html>

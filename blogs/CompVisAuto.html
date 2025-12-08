@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computer Vision for Autonomous Vehicles: Principles, Techniques, and Applications</title>
+  <meta name="description" content="An in-depth guide to computer vision for autonomous vehicles, covering perception, algorithms, challenges, and applications across navigation, safety, and industry."/>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #222; }
+    header, main, footer { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header h1 { margin: 0 0 8px; }
+    .abstract { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 16px; margin: 16px 0 32px; }
+    h2 { margin-top: 32px; }
+    figure { margin: 24px 0; }
+    figcaption { font-size: 0.9rem; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .callout { background: #fafafa; border-left: 4px solid #007acc; padding: 12px 16px; margin: 16px 0; }
+    .references li { margin-bottom: 8px; }
+    .small { font-size: 0.95rem; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Computer Vision for Autonomous Vehicles: Principles, Techniques, and Applications</h1>
+    <p class="small">By Jyothish • Jatani, Odisha • Monday, 08 December 2025</p>
+    <section class="abstract">
+      <strong>Abstract (60 words):</strong>
+      Computer vision enables autonomous vehicles to perceive and interpret their surroundings. This article explains core principles, algorithms for detection and tracking, sensor fusion, and challenges such as weather and occlusion. It compares computer vision with LiDAR and radar, and maps applications across navigation, safety, and industry, with design considerations and references for reproducible deployment.
+    </section>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>
+        Autonomous vehicles rely heavily on computer vision to understand their environment. Cameras capture visual data, which is processed by algorithms to detect lanes, traffic signs, pedestrians, and other vehicles. Combined with sensor fusion, computer vision provides critical input for navigation, safety, and decision-making.
+      </p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Autonomous_car_perception.png" alt="Autonomous vehicle perception pipeline" width="720" />
+        <figcaption>
+          Autonomous vehicle perception pipeline. Source: Wikimedia Commons (CC BY-SA 4.0).
+        </figcaption>
+      </figure>
+      <div class="callout">
+        <strong>Key idea:</strong> Computer vision transforms raw camera data into actionable insights for autonomous driving.
+      </div>
+    </section>
+
+    <section id="techniques">
+      <h2>Core Techniques</h2>
+      <div class="grid">
+        <article>
+          <h3>Lane Detection</h3>
+          <p>
+            Algorithms identify lane markings using edge detection, Hough transforms, or deep learning, enabling lane keeping and path planning.
+          </p>
+        </article>
+        <article>
+          <h3>Object Detection</h3>
+          <p>
+            Models like YOLO, Faster R-CNN, and SSD detect vehicles, pedestrians, and obstacles in real time.
+          </p>
+        </article>
+        <article>
+          <h3>Traffic Sign Recognition</h3>
+          <p>
+            CNN-based classifiers recognize speed limits, stop signs, and signals, ensuring compliance with road rules.
+          </p>
+        </article>
+        <article>
+          <h3>Semantic Segmentation</h3>
+          <p>
+            Pixel-level classification separates road, sidewalk, vehicles, and vegetation, providing detailed scene understanding.
+          </p>
+        </article>
+        <article>
+          <h3>Sensor Fusion</h3>
+          <p>
+            Vision data is fused with LiDAR, radar, and GNSS to improve robustness under challenging conditions.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="challenges">
+      <h2>Challenges</h2>
+      <ul>
+        <li><strong>Weather:</strong> Rain, fog, and snow degrade camera performance.</li>
+        <li><strong>Lighting:</strong> Low light or glare affects detection accuracy.</li>
+        <li><strong>Occlusion:</strong> Objects hidden behind others complicate recognition.</li>
+        <li><strong>Real-time constraints:</strong> Algorithms must run with low latency for safety-critical decisions.</li>
+      </ul>
+    </section>
+
+    <section id="comparison">
+      <h2>Comparison with Other Sensors</h2>
+      <p>
+        Computer vision provides rich semantic information but struggles in adverse conditions. LiDAR offers precise depth but is costly. Radar excels in detecting objects in poor weather but lacks detail. Sensor fusion combines strengths, ensuring reliable perception.
+      </p>
+    </section>
+
+    <section id="applications">
+      <h2>Applications</h2>
+      <div class="grid">
+        <article>
+          <h3>Navigation</h3>
+          <p>
+            Vision-based lane detection and mapping guide autonomous vehicles along roads and highways.
+          </p>
+        </article>
+        <article>
+          <h3>Safety</h3>
+          <p>
+            Real-time pedestrian and vehicle detection prevent collisions and enhance driver assistance systems.
+          </p>
+        </article>
+        <article>
+          <h3>Industry</h3>
+          <p>
+            Computer vision supports fleet management, logistics, and smart city integration of autonomous vehicles.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="design">
+      <h2>Design Considerations</h2>
+      <ul>
+        <li><strong>Dataset Quality:</strong> Diverse training data improves robustness across environments.</li>
+        <li><strong>Algorithm Efficiency:</strong> Optimize models for embedded hardware with limited resources.</li>
+        <li><strong>Safety Standards:</strong> Ensure compliance with ISO 26262 and automotive safety regulations.</li>
+        <li><strong>Redundancy:</strong> Combine multiple sensors to mitigate failures.</li>
+      </ul>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="references">
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S187705092030236X">ScienceDirect: Computer Vision in Autonomous Vehicles</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Autonomous_car">Wikipedia: Autonomous Car</a></li>
+        <li><a href="https://arxiv.org/abs/1906.08959">arXiv: Deep Learning for Autonomous Driving</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p class="small">
+      © 2025. This article is intended for educational purposes. For deployment, consult automotive standards, sensor datasheets, and perform empirical validation under target conditions.
+    </p>
+  </footer>
+</body>
+</html>

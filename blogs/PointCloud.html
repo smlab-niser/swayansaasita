@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Point Clouds: Principles, Processing, and Applications</title>
+  <meta name="description" content="An in-depth guide to point clouds, covering acquisition, processing, challenges, and applications across robotics, autonomous driving, AR/VR, and industry."/>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #222; }
+    header, main, footer { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header h1 { margin: 0 0 8px; }
+    .abstract { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 16px; margin: 16px 0 32px; }
+    h2 { margin-top: 32px; }
+    figure { margin: 24px 0; }
+    figcaption { font-size: 0.9rem; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .callout { background: #fafafa; border-left: 4px solid #007acc; padding: 12px 16px; margin: 16px 0; }
+    .references li { margin-bottom: 8px; }
+    .small { font-size: 0.95rem; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Point Clouds: Principles, Processing, and Applications</h1>
+    <p class="small">By Jyothish • Jatani, Odisha • Monday, 08 December 2025</p>
+    <section class="abstract">
+      <strong>Abstract (60 words):</strong>
+      Point clouds are collections of 3D data points representing surfaces and environments. This article explains acquisition methods, processing challenges, and algorithms for segmentation, classification, and reconstruction. It compares point clouds with other 3D data formats and maps applications across robotics, autonomous driving, AR/VR, healthcare, and industry, with practical design notes and references for reproducible deployment.
+    </section>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>What are Point Clouds?</h2>
+      <p>
+        A point cloud is a set of data points in 3D space, typically produced by LiDAR, photogrammetry, or depth cameras. Each point has coordinates (x, y, z) and may include attributes like color or intensity. Point clouds are fundamental for representing complex geometries and environments in digital form.
+      </p>
+      <figure>
+        <img src="https://www.unavco.org/software/visualization/idv/IDV_datasource_point_cloud.html" alt="LiDAR point cloud visualization" width="720" />
+        <figcaption>
+          LiDAR point cloud visualization. Source: UNAVCO (public domain).
+        </figcaption>
+      </figure>
+      <div class="callout">
+        <strong>Key idea:</strong> Point clouds capture real-world geometry in discrete samples, enabling accurate 3D reconstruction.
+      </div>
+    </section>
+
+    <section id="acquisition">
+      <h2>Acquisition Methods</h2>
+      <ul>
+        <li><strong>LiDAR:</strong> Uses laser pulses to measure distances, producing dense point clouds for mapping and navigation.</li>
+        <li><strong>Photogrammetry:</strong> Derives 3D points from overlapping 2D images using triangulation.</li>
+        <li><strong>Depth Cameras:</strong> Devices like Kinect or stereo rigs generate point clouds from disparity or ToF measurements.</li>
+      </ul>
+    </section>
+
+    <section id="processing">
+      <h2>Processing Challenges</h2>
+      <p>
+        Point clouds are **unstructured and unordered**, making them harder to process than images. Algorithms must handle noise, varying density, and occlusions. Common tasks include:
+      </p>
+      <ul>
+        <li><strong>Segmentation:</strong> Partitioning points into meaningful regions (e.g., ground vs. objects).</li>
+        <li><strong>Classification:</strong> Assigning semantic labels to points (e.g., car, pedestrian, building).</li>
+        <li><strong>Registration:</strong> Aligning multiple point clouds into a unified model.</li>
+        <li><strong>Surface Reconstruction:</strong> Converting point sets into meshes or volumetric models.</li>
+      </ul>
+    </section>
+
+    <section id="applications">
+      <h2>Applications</h2>
+      <div class="grid">
+        <article>
+          <h3>Robotics</h3>
+          <p>
+            Point clouds enable robots to perceive environments, detect obstacles, and perform SLAM (Simultaneous Localization and Mapping).
+          </p>
+        </article>
+        <article>
+          <h3>Autonomous Driving</h3>
+          <p>
+            Self-driving cars use LiDAR point clouds for real-time perception, object detection, and navigation.
+          </p>
+        </article>
+        <article>
+          <h3>AR/VR</h3>
+          <p>
+            Point clouds reconstruct immersive environments for augmented and virtual reality experiences.
+          </p>
+        </article>
+        <article>
+          <h3>Healthcare</h3>
+          <p>
+            Medical imaging uses point clouds for 3D scans of anatomy, aiding diagnostics and surgical planning.
+          </p>
+        </article>
+        <article>
+          <h3>Industry</h3>
+          <p>
+            Point clouds support quality control, reverse engineering, and digital twins in manufacturing.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="images">
+      <h2>Point Cloud Visualizations</h2>
+      <figure>
+        <img src="https://www.researchgate.net/figure/Point-Cloud-Visualization_fig1_373210449" alt="Point cloud visualization example" width="720" />
+        <figcaption>
+          Example of point cloud visualization. Source: ResearchGate (academic use).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="references">
+      <h2>References</h2>
+      <ol class="references">
+        <li><a href="https://robotics.mit.edu/deep-learning-point-clouds/">MIT Robotics: Deep Learning with Point Clouds</a></li>
+        <li><a href="https://link.springer.com/article/10.1007/s00371-023-03237-7">Springer: Deep Learning and Point Clouds Review</a></li>
+        <li><a href="https://huggingface.co/learn/computer-vision-course/en/unit10/point_clouds">Hugging Face: Point Clouds in Computer Vision</a></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p class="small">
+      © 2025. This article is intended for educational purposes. For deployment, consult sensor datasheets, algorithm libraries, and perform empirical validation under target conditions.
+    </p>
+  </footer>
+</body>
+</html>

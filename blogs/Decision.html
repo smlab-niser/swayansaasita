@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Autonomous Vehicle Operation: From Multimodal Sensor Data Acquisition to Machine Learning-Based Decision Making</title>
+  <meta name="description" content="An elaborate guide to the complete chain of autonomous vehicle operation, covering multimodal sensor data acquisition, fusion, machine learning techniques for prediction and decision making, and applications in navigation and safety."/>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #222; }
+    header, main, footer { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header h1 { margin: 0 0 8px; }
+    .abstract { background: #f7f7f7; border: 1px solid #e5e5e5; padding: 16px; margin: 16px 0 32px; }
+    h2 { margin-top: 32px; }
+    figure { margin: 24px 0; }
+    figcaption { font-size: 0.9rem; color: #555; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .callout { background: #fafafa; border-left: 4px solid #007acc; padding: 12px 16px; margin: 16px 0; }
+    .references li { margin-bottom: 8px; }
+    .small { font-size: 0.95rem; color: #333; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Autonomous Vehicle Operation: From Multimodal Sensor Data Acquisition to Machine Learning-Based Decision Making</h1>
+    <p class="small">By Jyothish • Jatani, Odisha • Monday, 08 December 2025</p>
+    <section class="abstract">
+      <strong>Abstract (60 words):</strong>
+      Autonomous vehicles rely on multimodal sensors, data fusion, and machine learning for perception and decision making. This article elaborates the complete chain: sensor acquisition, preprocessing, fusion, prediction, and control. It emphasizes machine learning techniques for trajectory prediction, risk assessment, and decision making, mapping applications across navigation, safety, and industry, with design considerations and references for reproducible deployment.
+    </section>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h2>Introduction</h2>
+      <p>
+        Autonomous vehicles (AVs) represent a convergence of robotics, computer vision, sensor fusion, and machine learning. Their operation involves a complete chain: acquiring data from multimodal sensors, preprocessing and fusing this data, predicting the behavior of surrounding agents, and making safe, real-time decisions. This chain must be robust, reproducible, and validated under diverse conditions.
+      </p>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Autonomous_car_perception.png" alt="Autonomous vehicle perception pipeline" width="720" />
+        <figcaption>
+          Autonomous vehicle perception pipeline. Source: Wikimedia Commons (CC BY-SA 4.0).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="sensors">
+      <h2>Multimodal Sensor Data Acquisition</h2>
+      <p>
+        Autonomous vehicles integrate multiple sensors to capture complementary information:
+      </p>
+      <ul>
+        <li><strong>Cameras:</strong> Provide rich semantic information for lane detection, traffic signs, and object classification.</li>
+        <li><strong>LiDAR:</strong> Generates 3D point clouds for precise depth and obstacle detection.</li>
+        <li><strong>Radar:</strong> Robust to weather, measures velocity and distance of objects.</li>
+        <li><strong>Ultrasonic Sensors:</strong> Short-range detection for parking and close obstacles.</li>
+        <li><strong>GNSS + RTK:</strong> Provides global positioning with centimeter-level accuracy.</li>
+        <li><strong>IMU:</strong> Measures acceleration and angular velocity for motion estimation.</li>
+      </ul>
+      <div class="callout">
+        <strong>Challenge:</strong> Each sensor has limitations; fusion is essential for robust perception.
+      </div>
+    </section>
+
+    <section id="preprocessing">
+      <h2>Preprocessing and Sensor Fusion</h2>
+      <p>
+        Raw sensor data must be cleaned, synchronized, and fused:
+      </p>
+      <ul>
+        <li><strong>Calibration:</strong> Align sensors spatially and temporally.</li>
+        <li><strong>Filtering:</strong> Remove noise using Kalman filters, particle filters, or deep learning denoisers.</li>
+        <li><strong>Fusion:</strong> Combine data at different levels:
+          <ul>
+            <li><em>Early Fusion:</em> Raw data combined before processing.</li>
+            <li><em>Mid-Level Fusion:</em> Features combined after extraction.</li>
+            <li><em>Late Fusion:</em> Decisions combined at output stage.</li>
+          </ul>
+        </li>
+      </ul>
+      <figure>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Point_cloud_visualization.jpg" alt="LiDAR point cloud visualization" width="720" />
+        <figcaption>
+          LiDAR point cloud visualization. Source: Wikimedia Commons (CC BY-SA 4.0).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="ml">
+      <h2>Machine Learning for Prediction and Decision Making</h2>
+      <p>
+        Machine learning is central to autonomous vehicle decision making. Techniques include:
+      </p>
+      <h3>Perception</h3>
+      <ul>
+        <li><strong>Convolutional Neural Networks (CNNs):</strong> For object detection, lane recognition, and traffic sign classification.</li>
+        <li><strong>Semantic Segmentation:</strong> Pixel-level classification of road scenes.</li>
+        <li><strong>3D Deep Learning:</strong> PointNet, PointCNN for point cloud classification.</li>
+      </ul>
+
+      <h3>Prediction</h3>
+      <ul>
+        <li><strong>Recurrent Neural Networks (RNNs) / LSTMs:</strong> Predict trajectories of vehicles and pedestrians.</li>
+        <li><strong>Graph Neural Networks (GNNs):</strong> Model interactions between agents in traffic.</li>
+        <li><strong>Bayesian Models:</strong> Estimate uncertainty in predictions.</li>
+      </ul>
+
+      <h3>Decision Making</h3>
+      <ul>
+        <li><strong>Reinforcement Learning (RL):</strong> Learn policies for navigation and control under uncertainty.</li>
+        <li><strong>Imitation Learning:</strong> Learn from expert driving demonstrations.</li>
+        <li><strong>Hybrid Approaches:</strong> Combine rule-based logic with ML predictions for safety.</li>
+      </ul>
+
+      <h3>Planning and Control</h3>
+      <ul>
+        <li><strong>Model Predictive Control (MPC):</strong> Optimize trajectories under dynamic constraints.</li>
+        <li><strong>End-to-End Learning:</strong> Map sensor data directly to control commands.</li>
+        <li><strong>Safety Layers:</strong> Override unsafe ML decisions with deterministic rules.</li>
+      </ul>
+    </section>
+
+    <section id="chain">
+      <h2>Complete Chain of Operation</h2>
+      <ol>
+        <li><strong>Data Acquisition:</strong> Multimodal sensors capture environment.</li>
+        <li><strong>Preprocessing:</strong> Calibration, synchronization, noise reduction.</li>
+        <li><strong>Fusion:</strong> Combine sensor modalities for robust perception.</li>
+        <li><strong>Perception:</strong> Detect lanes, objects, traffic signs.</li>
+        <li><strong>Prediction:</strong> Forecast trajectories of dynamic agents.</li>
+        <li><strong>Decision Making:</strong> Select safe maneuvers using ML and rules.</li>
+        <li><strong>Planning:</strong> Generate feasible trajectories.</li>
+        <li><strong>Control:</strong> Execute commands via actuators.</li>
+      </ol>
+    </section>
+
+    <section id="applications">
+      <h2>Applications</h2>
+      <div class="grid">
+        <article>
+          <h3>Navigation</h3>
+          <p>
+            Vision and LiDAR-based navigation with ML predictions ensures lane-level accuracy.
+          </p>
+        </article>
+        <article>
+          <h3>Safety</h3>
+          <p>
+            Real-time pedestrian detection and collision avoidance enhance safety.
+          </p>
+        </article>
+        <article>
+          <h3>Fleet Management</h3>
+          <p>
+            AV fleets use ML for route optimization and traffic prediction.
+          </p>
+        </article>
+        <article>
+          <h3>Smart Cities</h3>
+          <p>
+            Integration with infrastructure enables cooperative perception and traffic flow optimization.
+          </p>
